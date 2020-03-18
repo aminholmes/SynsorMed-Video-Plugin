@@ -168,11 +168,9 @@
 		<!-- Resources -->
 
 		<source-file src="android/res/mipmap-mdpi/ic_notification.png" target-dir="res/mipmap-mdpi" />
-		<source-file src="android/res/mipmap-mdpi/ic_launcher.png" target-dir="res/mipmap-mdpi" />
 
 
 		<source-file src="android/res/mipmap-hdpi/ic_notification.png" target-dir="res/mipmap-hdpi" />
-		<source-file src="android/res/mipmap-hdpi/ic_launcher.png" target-dir="res/mipmap-hdpi" />
 
 
 		<source-file src="android/res/drawable/ic_mic_off.xml" target-dir="res/drawable" />
@@ -199,7 +197,6 @@
 
 
 		<source-file src="android/res/mipmap-xxxhdpi/ic_notification.png" target-dir="res/mipmap-xxxhdpi" />
-		<source-file src="android/res/mipmap-xxxhdpi/ic_launcher.png" target-dir="res/mipmap-xxxhdpi" />
 
 
 		<source-file src="android/res/layout/view_avatar_and_name.xml" target-dir="res/layout" />
@@ -231,7 +228,6 @@
 
 
 		<source-file src="android/res/mipmap-xxhdpi/ic_notification.png" target-dir="res/mipmap-xxhdpi" />
-		<source-file src="android/res/mipmap-xxhdpi/ic_launcher.png" target-dir="res/mipmap-xxhdpi" />
 
 
 		<source-file src="android/res/values/sm_video_colors.xml" target-dir="res/values" />
@@ -400,7 +396,6 @@
 
 
 		<source-file src="android/res/mipmap-xhdpi/ic_notification.png" target-dir="res/mipmap-xhdpi" />
-		<source-file src="android/res/mipmap-xhdpi/ic_launcher.png" target-dir="res/mipmap-xhdpi" />
 
 
 		<source-file src="android/res/drawable-xxxhdpi/ic_video_white_24dp.png" target-dir="res/drawable-xxxhdpi" />
