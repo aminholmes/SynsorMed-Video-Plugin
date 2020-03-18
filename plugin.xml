@@ -22,6 +22,7 @@
 	<platform name="android">	
 
 		<framework src="android/videoPlugin.gradle" custom="true" type="gradleReference"/>
+		<framework src="com.android.support:appcompat-v7:22.2.1" />
 
 		<config-file target="res/xml/config.xml" parent="/*">
 			<feature name="videoPlugin">
