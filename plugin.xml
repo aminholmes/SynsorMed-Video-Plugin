@@ -26,6 +26,7 @@
 		<framework src="com.android.support:recyclerview-v7:21+" />
 		<framework src="com.android.support:design:22.2.1" />
 		<framework src="com.android.support:support-v4:21+" />
+		<framework src="com.android.support:support-compat:28.0.0" />
 
 		<config-file target="res/xml/config.xml" parent="/*">
 			<feature name="videoPlugin">
