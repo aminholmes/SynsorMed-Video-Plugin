@@ -317,8 +317,6 @@
 		<source-file src="android/res/drawable-xxhdpi/ic_group.png" target-dir="res/drawable-xxhdpi" />
 		<source-file src="android/res/drawable-xxhdpi/ic_volume_on.png" target-dir="res/drawable-xxhdpi" />
 
-
-		<source-file src="android/res/xml/.DS_Store" target-dir="res/xml" />
 		<source-file src="android/res/xml/config.xml" target-dir="res/xml" />
 		<source-file src="android/res/xml/preferences.xml" target-dir="res/xml" />
 
