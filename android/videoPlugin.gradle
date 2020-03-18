@@ -1,0 +1,20 @@
+repositories{    
+ jcenter()
+   flatDir {
+     dirs 'libs'
+   }
+}
+
+dependencies {
+  compile (name:'quickblox-android-sdk-videochat-webrtc-3.9.3', ext:'aar')
+  compile (name:'quickblox-android-sdk-core-3.9.3', ext:'aar')
+  compile (name:'quickblox-android-sdk-conference-3.9.3', ext:'aar')
+  compile (name:'quickblox-android-sdk-chat-3.9.3', ext:'aar')
+}
+
+android {
+ packagingOptions {
+  exclude 'META-INF/NOTICE'
+  exclude 'META-INF/LICENSE'
+ }
+}

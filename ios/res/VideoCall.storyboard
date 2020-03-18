@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="VAGRoundedStd-Bold.otf">
+            <string>VAGRoundedStd-Bold</string>
+        </mutableArray>
+        <mutableArray key="VAGRoundedStd-Light.otf">
+            <string>VAGRoundedStd-Light</string>
+            <string>VAGRoundedStd-Light</string>
+        </mutableArray>
+    </customFonts>
+    <scenes>
+        <!--Call View Controller-->
+        <scene sceneID="k2C-8B-b81">
+            <objects>
+                <viewController storyboardIdentifier="CallViewController" id="8RJ-gi-dfC" customClass="CallViewController" sceneMemberID="viewController">
+                    <view key="view" autoresizesSubviews="NO" contentMode="scaleToFill" id="iyz-ST-JVr">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view hidden="YES" contentMode="scaleToFill" id="hBZ-Xk-Cot" userLabel="CallingView">
+                                <rect key="frame" x="40" y="220" width="400" height="200"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calling Patient" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="MKe-Ne-NVU" userLabel="CallingLabel">
+                                        <rect key="frame" x="0.0" y="50" width="400" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="VAGRoundedStd-Bold" family="VAG Rounded Std" pointSize="30"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="eR1-ha-bQU" userLabel="CallingHangup">
+                                        <rect key="frame" x="125" y="120" width="150" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.94117647059999998" green="0.36862745099999999" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="VAGRoundedStd-Light" family="VAG Rounded Std" pointSize="15"/>
+                                        <state key="normal" title="Hang Up">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="callinghangup:" destination="8RJ-gi-dfC" eventType="touchUpInside" id="zXt-do-fBo"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" id="DbR-Nd-TRk" userLabel="VideoIn" customClass="QBRTCRemoteVideoView">
+                                <rect key="frame" x="-4" y="0.0" width="328" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="oa3-zK-VRW">
+                                        <rect key="frame" x="60" y="25" width="200" height="20"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="VAGRoundedStd-Light" family="VAG Rounded Std" pointSize="10"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </view>
+                            <view contentMode="center" id="keS-qE-Gus" userLabel="MenuBar">
+                                <rect key="frame" x="50" y="450" width="460" height="120"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Qhk-ul-BLZ" userLabel="switch">
+                                        <rect key="frame" x="0.0" y="10" width="100" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <rect key="contentStretch" x="0.0" y="0.0" width="1" height="0.14999999999999999"/>
+                                        <state key="normal" image="call_switch"/>
+                                        <connections>
+                                            <action selector="pressButton:" destination="8RJ-gi-dfC" eventType="touchDown" id="R0Q-yH-sDa"/>
+                                            <action selector="switchCam:" destination="8RJ-gi-dfC" eventType="touchUpInside" id="2Hj-Om-vzy"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="4sK-Tf-eIy" userLabel="video">
+                                        <rect key="frame" x="108" y="10" width="100" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="call_webcam"/>
+                                        <connections>
+                                            <action selector="pressButton:" destination="8RJ-gi-dfC" eventType="touchDown" id="EA2-Cb-JSs"/>
+                                            <action selector="toggleVideo:" destination="8RJ-gi-dfC" eventType="touchUpInside" id="ZQk-ZQ-lDt"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="8aK-WM-a1u" userLabel="mic">
+                                        <rect key="frame" x="259" y="10" width="100" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="call_mute"/>
+                                        <connections>
+                                            <action selector="pressButton:" destination="8RJ-gi-dfC" eventType="touchDown" id="fmV-N6-QZQ"/>
+                                            <action selector="toggleMic:" destination="8RJ-gi-dfC" eventType="touchUpInside" id="hmm-hH-1XN"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ofd-4A-xPf" userLabel="hangup">
+                                        <rect key="frame" x="360" y="10" width="100" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="call_raccrocher"/>
+                                        <connections>
+                                            <action selector="hangup:" destination="8RJ-gi-dfC" eventType="touchUpInside" id="dzd-VV-wzA"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.023529411764705882" green="0.6705882352941176" blue="0.64313725490196072" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" id="fXa-lJ-9gC" userLabel="VideoOut">
+                                <rect key="frame" x="300" y="300" width="150" height="150"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </view>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <outlet property="b_callinghangup" destination="eR1-ha-bQU" id="BHD-26-IFf"/>
+                        <outlet property="b_hangup" destination="ofd-4A-xPf" id="QSv-mb-7RB"/>
+                        <outlet property="b_mic" destination="8aK-WM-a1u" id="4fQ-R2-tyd"/>
+                        <outlet property="b_switch" destination="Qhk-ul-BLZ" id="QhB-Bd-UNY"/>
+                        <outlet property="b_video" destination="4sK-Tf-eIy" id="eJU-1a-pfV"/>
+                        <outlet property="l_callTimer" destination="oa3-zK-VRW" id="7hU-kh-86Y"/>
+                        <outlet property="l_callinglabel" destination="MKe-Ne-NVU" id="3ky-Pr-sD2"/>
+                        <outlet property="v_callingview" destination="hBZ-Xk-Cot" id="9O2-5m-ZRz"/>
+                        <outlet property="v_mainview" destination="iyz-ST-JVr" id="iZh-2F-ycI"/>
+                        <outlet property="v_menubar" destination="keS-qE-Gus" id="rhR-n1-Y7L"/>
+                        <outlet property="v_videoin" destination="DbR-Nd-TRk" id="ue9-ce-dwh"/>
+                        <outlet property="v_videoout" destination="fXa-lJ-9gC" id="b8t-Lo-Ahe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DiR-Kd-UPa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="82" y="368"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="call_mute" width="38" height="38"/>
+        <image name="call_raccrocher" width="38" height="38"/>
+        <image name="call_switch" width="38" height="38"/>
+        <image name="call_webcam" width="38" height="38"/>
+    </resources>
+</document>

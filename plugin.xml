@@ -1,0 +1,532 @@
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	id="com.synsormed.qbplugin"
+	version="1.2">
+
+
+	<name>SM_Video</name>
+	<description>SynsorMed Video Plugin</description>
+	<author>SynsorMed</author>
+	<license>SynsorMed</license>
+	<repo>https://github.com/aminholmes/Synsormed-Video-Plugin.git</repo>
+	
+	<engines>
+		<engine name="cordova" version=">=3.1.0" />
+	</engines>
+
+
+	<js-module src="www/Quickblox.js" name="videoPlugin">
+		<clobbers target="videoPlugin" />
+	</js-module>
+
+	<platform name="android">	
+
+		<framework src="android/videoPlugin.gradle" custom="true" type="gradleReference"/>
+
+		<config-file target="res/xml/config.xml" parent="/*">
+			<feature name="videoPlugin">
+				<param name="android-package" value="com.quickblox.sample.videochat.java.sm_video_phonegap" />
+			</feature>
+		</config-file>
+
+		<config-file target="AndroidManifest.xml" parent="/manifest">
+			<uses-permission android:name="android.permission.INTERNET" />
+			<uses-permission android:name="android.permission.VIBRATE" />
+			<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+			<uses-permission android:name="android.permission.RECORD_AUDIO" />
+			<uses-permission android:name="android.permission.CAMERA" />
+			<uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+			<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+			<uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+			<uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+			<uses-permission android:name="android.permission.BLUETOOTH" />
+
+			<uses-feature android:name="android.hardware.camera" />
+    		<uses-feature android:name="android.hardware.camera.autofocus" />
+		
+		</config-file>
+
+		<config-file target="AndroidManifest.xml" parent="/manifest/application">
+			<activity
+            android:name=".activities.SplashActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+	        </activity>
+
+	        <activity
+	            android:name=".activities.LoginActivity"
+	            android:configChanges="keyboardHidden|screenSize|orientation"
+	            android:screenOrientation="portrait" />
+
+	        <activity
+	            android:name=".activities.OpponentsActivity"
+	            android:configChanges="keyboardHidden|screenSize|orientation"
+	            android:launchMode="singleTask"
+	            android:screenOrientation="portrait" />
+
+	        <activity android:name=".activities.PermissionsActivity"
+	            android:screenOrientation="portrait" />
+
+	        <activity
+	            android:name=".activities.CallActivity"
+	            android:configChanges="keyboardHidden|screenSize|orientation"
+	            android:excludeFromRecents="true"
+	            android:launchMode="singleTask"
+	            android:screenOrientation="portrait"
+	            android:theme="@style/BaseAppTheme" />
+
+	        <activity
+	            android:name=".activities.SettingsActivity"
+	            android:configChanges="keyboardHidden|screenSize|orientation"
+	            android:screenOrientation="portrait" />
+
+	        <activity
+	            android:name=".activities.AppInfoActivity"
+	            android:screenOrientation="portrait" />
+	            
+		</config-file>
+		
+		<!-- This section is for all of the lib files -->
+
+		<source-file src="android/libs/quickblox-android-sdk-videochat-webrtc-3.9.3.aar" target-dir="libs" />
+		<source-file src="android/libs/quickblox-android-sdk-core-3.9.3.aar" target-dir="libs" />
+		<source-file src="android/libs/quickblox-android-sdk-conference-3.9.3.aar" target-dir="libs" />
+		<source-file src="android/libs/quickblox-android-sdk-chat-3.9.3.aar" target-dir="libs" />
+
+		<!-- This section is for all of the QB files -->
+
+		<source-file src="android/src/com/quickblox/sample/videochat/java/SM_video_phonegap.java" target-dir="src/com/quickblox/sample/videochat/java" />
+
+		<source-file src="android/src/com/quickblox/sample/videochat/java/fragments/VideoConversationFragment.java" target-dir="src/com/quickblox/sample/videochat/java/fragments" />
+		<source-file src="android/src/com/quickblox/sample/videochat/java/fragments/ScreenShareFragment.java" target-dir="src/com/quickblox/sample/videochat/java/fragments" />
+		<source-file src="android/src/com/quickblox/sample/videochat/java/fragments/BaseConversationFragment.java" target-dir="src/com/quickblox/sample/videochat/java/fragments" />
+		<source-file src="android/src/com/quickblox/sample/videochat/java/fragments/IncomeCallFragment.java" target-dir="src/com/quickblox/sample/videochat/java/fragments" />
+		<source-file src="android/src/com/quickblox/sample/videochat/java/fragments/SettingsFragment.java" target-dir="src/com/quickblox/sample/videochat/java/fragments" />
+		<source-file src="android/src/com/quickblox/sample/videochat/java/fragments/ConversationFragmentCallback.java" target-dir="src/com/quickblox/sample/videochat/java/fragments" />
+		<source-file src="android/src/com/quickblox/sample/videochat/java/fragments/AudioConversationFragment.java" target-dir="src/com/quickblox/sample/videochat/java/fragments" />
+		<source-file src="android/src/com/quickblox/sample/videochat/java/fragments/BaseToolBarFragment.java" target-dir="src/com/quickblox/sample/videochat/java/fragments" />
+		<source-file src="android/src/com/quickblox/sample/videochat/java/fragments/PreviewFragment.java" target-dir="src/com/quickblox/sample/videochat/java/fragments" />
+		<source-file src="android/src/com/quickblox/sample/videochat/java/fragments/IncomeCallFragmentCallbackListener.java" target-dir="src/com/quickblox/sample/videochat/java/fragments" />
+		<source-file src="android/src/com/quickblox/sample/videochat/java/fragments/OnCallEventsController.java" target-dir="src/com/quickblox/sample/videochat/java/fragments" />
+
+
+		<source-file src="android/src/com/quickblox/sample/videochat/java/util/NetworkConnectionChecker.java" target-dir="src/com/quickblox/sample/videochat/java/util" />
+		<source-file src="android/src/com/quickblox/sample/videochat/java/util/QBResRequestExecutor.java" target-dir="src/com/quickblox/sample/videochat/java/util" />
+		<source-file src="android/src/com/quickblox/sample/videochat/java/util/ChatPingAlarmManager.java" target-dir="src/com/quickblox/sample/videochat/java/util" />
+
+
+		<source-file src="android/src/com/quickblox/sample/videochat/java/utils/SettingsUtil.java" target-dir="src/com/quickblox/sample/videochat/java/utils" />
+		<source-file src="android/src/com/quickblox/sample/videochat/java/utils/PermissionsChecker.java" target-dir="src/com/quickblox/sample/videochat/java/utils" />
+		<source-file src="android/src/com/quickblox/sample/videochat/java/utils/Consts.java" target-dir="src/com/quickblox/sample/videochat/java/utils" />
+		<source-file src="android/src/com/quickblox/sample/videochat/java/utils/ToastUtils.java" target-dir="src/com/quickblox/sample/videochat/java/utils" />
+		<source-file src="android/src/com/quickblox/sample/videochat/java/utils/ValidationUtils.java" target-dir="src/com/quickblox/sample/videochat/java/utils" />
+		<source-file src="android/src/com/quickblox/sample/videochat/java/utils/DialogUtil.java" target-dir="src/com/quickblox/sample/videochat/java/utils" />
+		<source-file src="android/src/com/quickblox/sample/videochat/java/utils/UsersUtils.java" target-dir="src/com/quickblox/sample/videochat/java/utils" />
+		<source-file src="android/src/com/quickblox/sample/videochat/java/utils/SharedPrefsHelper.java" target-dir="src/com/quickblox/sample/videochat/java/utils" />
+		<source-file src="android/src/com/quickblox/sample/videochat/java/utils/QBEntityCallbackImpl.java" target-dir="src/com/quickblox/sample/videochat/java/utils" />
+		<source-file src="android/src/com/quickblox/sample/videochat/java/utils/UiUtils.java" target-dir="src/com/quickblox/sample/videochat/java/utils" />
+		<source-file src="android/src/com/quickblox/sample/videochat/java/utils/RingtonePlayer.java" target-dir="src/com/quickblox/sample/videochat/java/utils" />
+		<source-file src="android/src/com/quickblox/sample/videochat/java/utils/FragmentExecuotr.java" target-dir="src/com/quickblox/sample/videochat/java/utils" />
+		<source-file src="android/src/com/quickblox/sample/videochat/java/utils/CollectionsUtils.java" target-dir="src/com/quickblox/sample/videochat/java/utils" />
+		<source-file src="android/src/com/quickblox/sample/videochat/java/utils/ErrorUtils.java" target-dir="src/com/quickblox/sample/videochat/java/utils" />
+		<source-file src="android/src/com/quickblox/sample/videochat/java/utils/QBRTCSessionUtils.java" target-dir="src/com/quickblox/sample/videochat/java/utils" />
+		<source-file src="android/src/com/quickblox/sample/videochat/java/utils/PushNotificationSender.java" target-dir="src/com/quickblox/sample/videochat/java/utils" />
+		<source-file src="android/src/com/quickblox/sample/videochat/java/utils/WebRtcSessionManager.java" target-dir="src/com/quickblox/sample/videochat/java/utils" />
+		<source-file src="android/src/com/quickblox/sample/videochat/java/utils/CameraUtils.java" target-dir="src/com/quickblox/sample/videochat/java/utils" />
+		<source-file src="android/src/com/quickblox/sample/videochat/java/utils/KeyboardUtils.java" target-dir="src/com/quickblox/sample/videochat/java/utils" />
+
+
+		<source-file src="android/src/com/quickblox/sample/videochat/java/adapters/OpponentsFromCallAdapter.java" target-dir="src/com/quickblox/sample/videochat/java/adapters" />
+		<source-file src="android/src/com/quickblox/sample/videochat/java/adapters/UsersAdapter.java" target-dir="src/com/quickblox/sample/videochat/java/adapters" />
+
+
+		<source-file src="android/src/com/quickblox/sample/videochat/java/view/SeekBarPreference.java" target-dir="src/com/quickblox/sample/videochat/java/view" />
+		<source-file src="android/src/com/quickblox/sample/videochat/java/view/ListPreferenceCompat.java" target-dir="src/com/quickblox/sample/videochat/java/view" />
+
+
+		<source-file src="android/src/com/quickblox/sample/videochat/java/db/QbUsersDbManager.java" target-dir="src/com/quickblox/sample/videochat/java/db" />
+		<source-file src="android/src/com/quickblox/sample/videochat/java/db/DbHelper.java" target-dir="src/com/quickblox/sample/videochat/java/db" />
+
+
+		<source-file src="android/src/com/quickblox/sample/videochat/java/activities/CallActivity.java" target-dir="src/com/quickblox/sample/videochat/java/activities" />
+		<source-file src="android/src/com/quickblox/sample/videochat/java/activities/OpponentsActivity.java" target-dir="src/com/quickblox/sample/videochat/java/activities" />
+		<source-file src="android/src/com/quickblox/sample/videochat/java/activities/SplashActivity.java" target-dir="src/com/quickblox/sample/videochat/java/activities" />
+		<source-file src="android/src/com/quickblox/sample/videochat/java/activities/AppInfoActivity.java" target-dir="src/com/quickblox/sample/videochat/java/activities" />
+		<source-file src="android/src/com/quickblox/sample/videochat/java/activities/LoginActivity.java" target-dir="src/com/quickblox/sample/videochat/java/activities" />
+		<source-file src="android/src/com/quickblox/sample/videochat/java/activities/PermissionsActivity.java" target-dir="src/com/quickblox/sample/videochat/java/activities" />
+		<source-file src="android/src/com/quickblox/sample/videochat/java/activities/BaseActivity.java" target-dir="src/com/quickblox/sample/videochat/java/activities" />
+		<source-file src="android/src/com/quickblox/sample/videochat/java/activities/SettingsActivity.java" target-dir="src/com/quickblox/sample/videochat/java/activities" />
+
+
+		<source-file src="android/src/com/quickblox/sample/videochat/java/services/CallService.java" target-dir="src/com/quickblox/sample/videochat/java/services" />
+		<source-file src="android/src/com/quickblox/sample/videochat/java/services/LoginService.java" target-dir="src/com/quickblox/sample/videochat/java/services" />
+		<source-file src="android/src/com/quickblox/sample/videochat/java/services/fcm/PushListenerService.java" target-dir="src/com/quickblox/sample/videochat/java/services/fcm" />
+				
+		<!-- Resources -->
+
+		<source-file src="android/res/mipmap-mdpi/ic_notification.png" target-dir="res/mipmap-mdpi" />
+		<source-file src="android/res/mipmap-mdpi/ic_launcher.png" target-dir="res/mipmap-mdpi" />
+
+
+		<source-file src="android/res/mipmap-hdpi/ic_notification.png" target-dir="res/mipmap-hdpi" />
+		<source-file src="android/res/mipmap-hdpi/ic_launcher.png" target-dir="res/mipmap-hdpi" />
+
+
+		<source-file src="android/res/drawable/ic_mic_off.xml" target-dir="res/drawable" />
+		<source-file src="android/res/drawable/selector_call_take.xml" target-dir="res/drawable" />
+		<source-file src="android/res/drawable/call_toggle_button_background.xml" target-dir="res/drawable" />
+		<source-file src="android/res/drawable/selector_toggle_speaker.xml" target-dir="res/drawable" />
+		<source-file src="android/res/drawable/toolbar_shadow.xml" target-dir="res/drawable" />
+		<source-file src="android/res/drawable/call_cam_toggle_background.xml" target-dir="res/drawable" />
+		<source-file src="android/res/drawable/group_call.png" target-dir="res/drawable" />
+		<source-file src="android/res/drawable/selector_toggle_mic.xml" target-dir="res/drawable" />
+		<source-file src="android/res/drawable/shape_oval_green.xml" target-dir="res/drawable" />
+		<source-file src="android/res/drawable/opponents.png" target-dir="res/drawable" />
+		<source-file src="android/res/drawable/shape_oval_red.xml" target-dir="res/drawable" />
+		<source-file src="android/res/drawable/shape_oval_white_red.xml" target-dir="res/drawable" />
+		<source-file src="android/res/drawable/shape_oval_white_green.xml" target-dir="res/drawable" />
+		<source-file src="android/res/drawable/ic_user_camera_off.png" target-dir="res/drawable" />
+		<source-file src="android/res/drawable/selector_call_end.xml" target-dir="res/drawable" />
+		<source-file src="android/res/drawable/login_screen.png" target-dir="res/drawable" />
+		<source-file src="android/res/drawable/call_mic_toggle_background.xml" target-dir="res/drawable" />
+		<source-file src="android/res/drawable/call_speaker_toggle_background.xml" target-dir="res/drawable" />
+		<source-file src="android/res/drawable/selector_toggle_cam.xml" target-dir="res/drawable" />
+		<source-file src="android/res/drawable/shape_oval_transparent.xml" target-dir="res/drawable" />
+		<source-file src="android/res/drawable/p2p.png" target-dir="res/drawable" />
+
+
+		<source-file src="android/res/mipmap-xxxhdpi/ic_notification.png" target-dir="res/mipmap-xxxhdpi" />
+		<source-file src="android/res/mipmap-xxxhdpi/ic_launcher.png" target-dir="res/mipmap-xxxhdpi" />
+
+
+		<source-file src="android/res/layout/view_avatar_and_name.xml" target-dir="res/layout" />
+		<source-file src="android/res/layout/local_video_view.xml" target-dir="res/layout" />
+		<source-file src="android/res/layout/fragment_income_call.xml" target-dir="res/layout" />
+		<source-file src="android/res/layout/connection_popup.xml" target-dir="res/layout" />
+		<source-file src="android/res/layout/activity_login.xml" target-dir="res/layout" />
+		<source-file src="android/res/layout/toolbar_call.xml" target-dir="res/layout" />
+		<source-file src="android/res/layout/view_action_buttons_incoming_fragment.xml" target-dir="res/layout" />
+		<source-file src="android/res/layout/seekbar_preference.xml" target-dir="res/layout" />
+		<source-file src="android/res/layout/fragment_pager.xml" target-dir="res/layout" />
+		<source-file src="android/res/layout/activity_show_image.xml" target-dir="res/layout" />
+		<source-file src="android/res/layout/activity_permissions.xml" target-dir="res/layout" />
+		<source-file src="android/res/layout/activity_splash.xml" target-dir="res/layout" />
+		<source-file src="android/res/layout/list_item_user.xml" target-dir="res/layout" />
+		<source-file src="android/res/layout/fragment_item_screen_share.xml" target-dir="res/layout" />
+		<source-file src="android/res/layout/activity_appinfo.xml" target-dir="res/layout" />
+		<source-file src="android/res/layout/view_outgoing_screen.xml" target-dir="res/layout" />
+		<source-file src="android/res/layout/fragment_video_conversation.xml" target-dir="res/layout" />
+		<source-file src="android/res/layout/activity_select_users.xml" target-dir="res/layout" />
+		<source-file src="android/res/layout/item_opponents_list.xml" target-dir="res/layout" />
+		<source-file src="android/res/layout/activity_main.xml" target-dir="res/layout" />
+		<source-file src="android/res/layout/list_item_opponent_from_call.xml" target-dir="res/layout" />
+		<source-file src="android/res/layout/remote_video_view.xml" target-dir="res/layout" />
+		<source-file src="android/res/layout/view_action_buttons_conversation_fragment.xml" target-dir="res/layout" />
+		<source-file src="android/res/layout/fragment_audio_conversation.xml" target-dir="res/layout" />
+		<source-file src="android/res/layout/view_for_preference.xml" target-dir="res/layout" />
+		<source-file src="android/res/layout/preference_version.xml" target-dir="res/layout" />
+
+
+		<source-file src="android/res/mipmap-xxhdpi/ic_notification.png" target-dir="res/mipmap-xxhdpi" />
+		<source-file src="android/res/mipmap-xxhdpi/ic_launcher.png" target-dir="res/mipmap-xxhdpi" />
+
+
+		<source-file src="android/res/values/colors.xml" target-dir="res/values" />
+		<source-file src="android/res/values/dimens.xml" target-dir="res/values" />
+		<source-file src="android/res/values/arrays.xml" target-dir="res/values" />
+		<source-file src="android/res/values/styles.xml" target-dir="res/values" />
+		<source-file src="android/res/values/strings.xml" target-dir="res/values" />
+		<source-file src="android/res/values/attrs.xml" target-dir="res/values" />
+		<source-file src="android/res/values/ids.xml" target-dir="res/values" />
+
+
+		<source-file src="android/res/drawable-xhdpi/ic_video_white_24dp.png" target-dir="res/drawable-xhdpi" />
+		<source-file src="android/res/drawable-xhdpi/ic_refresh.png" target-dir="res/drawable-xhdpi" />
+		<source-file src="android/res/drawable-xhdpi/ic_volume_high_white_24dp.png" target-dir="res/drawable-xhdpi" />
+		<source-file src="android/res/drawable-xhdpi/ic_accept_call.png" target-dir="res/drawable-xhdpi" />
+		<source-file src="android/res/drawable-xhdpi/ic_volume_off.png" target-dir="res/drawable-xhdpi" />
+		<source-file src="android/res/drawable-xhdpi/pres_img.png" target-dir="res/drawable-xhdpi" />
+		<source-file src="android/res/drawable-xhdpi/ic_videocam_w.png" target-dir="res/drawable-xhdpi" />
+		<source-file src="android/res/drawable-xhdpi/shape_circle.xml" target-dir="res/drawable-xhdpi" />
+		<source-file src="android/res/drawable-xhdpi/ic_microphone_off.png" target-dir="res/drawable-xhdpi" />
+		<source-file src="android/res/drawable-xhdpi/ic_camera_front.png" target-dir="res/drawable-xhdpi" />
+		<source-file src="android/res/drawable-xhdpi/ic_screen_share.png" target-dir="res/drawable-xhdpi" />
+		<source-file src="android/res/drawable-xhdpi/ic_video_white.png" target-dir="res/drawable-xhdpi" />
+		<source-file src="android/res/drawable-xhdpi/ic_camera_rear.png" target-dir="res/drawable-xhdpi" />
+		<source-file src="android/res/drawable-xhdpi/ic_microphone.png" target-dir="res/drawable-xhdpi" />
+		<source-file src="android/res/drawable-xhdpi/ic_arrow_back.png" target-dir="res/drawable-xhdpi" />
+		<source-file src="android/res/drawable-xhdpi/ic_video_off_white_24dp.png" target-dir="res/drawable-xhdpi" />
+		<source-file src="android/res/drawable-xhdpi/ic_videocam.png" target-dir="res/drawable-xhdpi" />
+		<source-file src="android/res/drawable-xhdpi/ic_stop_screenshare.png" target-dir="res/drawable-xhdpi" />
+		<source-file src="android/res/drawable-xhdpi/ic_phonelink_ring.png" target-dir="res/drawable-xhdpi" />
+		<source-file src="android/res/drawable-xhdpi/ic_call_grey.png" target-dir="res/drawable-xhdpi" />
+		<source-file src="android/res/drawable-xhdpi/ic_speaker_phone.png" target-dir="res/drawable-xhdpi" />
+		<source-file src="android/res/drawable-xhdpi/ic_call_end_sm.png" target-dir="res/drawable-xhdpi" />
+		<source-file src="android/res/drawable-xhdpi/ic_phone_hangup.png" target-dir="res/drawable-xhdpi" />
+		<source-file src="android/res/drawable-xhdpi/ic_microphone_off_white_24dp.png" target-dir="res/drawable-xhdpi" />
+		<source-file src="android/res/drawable-xhdpi/ic_volume_medium_white_24dp.png" target-dir="res/drawable-xhdpi" />
+		<source-file src="android/res/drawable-xhdpi/ic_arrow_back_w.png" target-dir="res/drawable-xhdpi" />
+		<source-file src="android/res/drawable-xhdpi/ic_person.png" target-dir="res/drawable-xhdpi" />
+		<source-file src="android/res/drawable-xhdpi/ic_volume_low_white_24dp.png" target-dir="res/drawable-xhdpi" />
+		<source-file src="android/res/drawable-xhdpi/ic_volume_off_white_24dp.png" target-dir="res/drawable-xhdpi" />
+		<source-file src="android/res/drawable-xhdpi/ic_microphone_white_24dp.png" target-dir="res/drawable-xhdpi" />
+		<source-file src="android/res/drawable-xhdpi/ic_checkmark.png" target-dir="res/drawable-xhdpi" />
+		<source-file src="android/res/drawable-xhdpi/ic_person_big.png" target-dir="res/drawable-xhdpi" />
+		<source-file src="android/res/drawable-xhdpi/qb_logo.png" target-dir="res/drawable-xhdpi" />
+		<source-file src="android/res/drawable-xhdpi/ic_call.png" target-dir="res/drawable-xhdpi" />
+		<source-file src="android/res/drawable-xhdpi/ic_group.png" target-dir="res/drawable-xhdpi" />
+		<source-file src="android/res/drawable-xhdpi/ic_volume_on.png" target-dir="res/drawable-xhdpi" />
+
+
+		<source-file src="android/res/drawable-xxhdpi/ic_video_white_24dp.png" target-dir="res/drawable-xxhdpi" />
+		<source-file src="android/res/drawable-xxhdpi/ic_refresh.png" target-dir="res/drawable-xxhdpi" />
+		<source-file src="android/res/drawable-xxhdpi/ic_volume_high_white_24dp.png" target-dir="res/drawable-xxhdpi" />
+		<source-file src="android/res/drawable-xxhdpi/ic_accept_call.png" target-dir="res/drawable-xxhdpi" />
+		<source-file src="android/res/drawable-xxhdpi/ic_volume_off.png" target-dir="res/drawable-xxhdpi" />
+		<source-file src="android/res/drawable-xxhdpi/pres_img.png" target-dir="res/drawable-xxhdpi" />
+		<source-file src="android/res/drawable-xxhdpi/ic_videocam_w.png" target-dir="res/drawable-xxhdpi" />
+		<source-file src="android/res/drawable-xxhdpi/ic_microphone_off.png" target-dir="res/drawable-xxhdpi" />
+		<source-file src="android/res/drawable-xxhdpi/ic_camera_front.png" target-dir="res/drawable-xxhdpi" />
+		<source-file src="android/res/drawable-xxhdpi/ic_screen_share.png" target-dir="res/drawable-xxhdpi" />
+		<source-file src="android/res/drawable-xxhdpi/ic_video_white.png" target-dir="res/drawable-xxhdpi" />
+		<source-file src="android/res/drawable-xxhdpi/ic_camera_rear.png" target-dir="res/drawable-xxhdpi" />
+		<source-file src="android/res/drawable-xxhdpi/ic_microphone.png" target-dir="res/drawable-xxhdpi" />
+		<source-file src="android/res/drawable-xxhdpi/ic_arrow_back.png" target-dir="res/drawable-xxhdpi" />
+		<source-file src="android/res/drawable-xxhdpi/ic_video_off_white_24dp.png" target-dir="res/drawable-xxhdpi" />
+		<source-file src="android/res/drawable-xxhdpi/ic_videocam.png" target-dir="res/drawable-xxhdpi" />
+		<source-file src="android/res/drawable-xxhdpi/ic_stop_screenshare.png" target-dir="res/drawable-xxhdpi" />
+		<source-file src="android/res/drawable-xxhdpi/ic_phonelink_ring.png" target-dir="res/drawable-xxhdpi" />
+		<source-file src="android/res/drawable-xxhdpi/ic_call_grey.png" target-dir="res/drawable-xxhdpi" />
+		<source-file src="android/res/drawable-xxhdpi/ic_speaker_phone.png" target-dir="res/drawable-xxhdpi" />
+		<source-file src="android/res/drawable-xxhdpi/ic_call_end_sm.png" target-dir="res/drawable-xxhdpi" />
+		<source-file src="android/res/drawable-xxhdpi/ic_phone_hangup.png" target-dir="res/drawable-xxhdpi" />
+		<source-file src="android/res/drawable-xxhdpi/ic_microphone_off_white_24dp.png" target-dir="res/drawable-xxhdpi" />
+		<source-file src="android/res/drawable-xxhdpi/ic_volume_medium_white_24dp.png" target-dir="res/drawable-xxhdpi" />
+		<source-file src="android/res/drawable-xxhdpi/ic_arrow_back_w.png" target-dir="res/drawable-xxhdpi" />
+		<source-file src="android/res/drawable-xxhdpi/ic_person.png" target-dir="res/drawable-xxhdpi" />
+		<source-file src="android/res/drawable-xxhdpi/ic_volume_low_white_24dp.png" target-dir="res/drawable-xxhdpi" />
+		<source-file src="android/res/drawable-xxhdpi/ic_volume_off_white_24dp.png" target-dir="res/drawable-xxhdpi" />
+		<source-file src="android/res/drawable-xxhdpi/ic_microphone_white_24dp.png" target-dir="res/drawable-xxhdpi" />
+		<source-file src="android/res/drawable-xxhdpi/ic_checkmark.png" target-dir="res/drawable-xxhdpi" />
+		<source-file src="android/res/drawable-xxhdpi/ic_person_big.png" target-dir="res/drawable-xxhdpi" />
+		<source-file src="android/res/drawable-xxhdpi/qb_logo.png" target-dir="res/drawable-xxhdpi" />
+		<source-file src="android/res/drawable-xxhdpi/ic_call.png" target-dir="res/drawable-xxhdpi" />
+		<source-file src="android/res/drawable-xxhdpi/ic_group.png" target-dir="res/drawable-xxhdpi" />
+		<source-file src="android/res/drawable-xxhdpi/ic_volume_on.png" target-dir="res/drawable-xxhdpi" />
+
+
+		<source-file src="android/res/xml/.DS_Store" target-dir="res/xml" />
+		<source-file src="android/res/xml/config.xml" target-dir="res/xml" />
+		<source-file src="android/res/xml/preferences.xml" target-dir="res/xml" />
+
+
+		<source-file src="android/res/drawable-hdpi/ic_video_white_24dp.png" target-dir="res/drawable-hdpi" />
+		<source-file src="android/res/drawable-hdpi/ic_refresh.png" target-dir="res/drawable-hdpi" />
+		<source-file src="android/res/drawable-hdpi/ic_volume_high_white_24dp.png" target-dir="res/drawable-hdpi" />
+		<source-file src="android/res/drawable-hdpi/ic_accept_call.png" target-dir="res/drawable-hdpi" />
+		<source-file src="android/res/drawable-hdpi/ic_volume_off.png" target-dir="res/drawable-hdpi" />
+		<source-file src="android/res/drawable-hdpi/pres_img.png" target-dir="res/drawable-hdpi" />
+		<source-file src="android/res/drawable-hdpi/ic_videocam_w.png" target-dir="res/drawable-hdpi" />
+		<source-file src="android/res/drawable-hdpi/ic_microphone_off.png" target-dir="res/drawable-hdpi" />
+		<source-file src="android/res/drawable-hdpi/ic_camera_front.png" target-dir="res/drawable-hdpi" />
+		<source-file src="android/res/drawable-hdpi/ic_screen_share.png" target-dir="res/drawable-hdpi" />
+		<source-file src="android/res/drawable-hdpi/ic_video_white.png" target-dir="res/drawable-hdpi" />
+		<source-file src="android/res/drawable-hdpi/ic_camera_rear.png" target-dir="res/drawable-hdpi" />
+		<source-file src="android/res/drawable-hdpi/ic_microphone.png" target-dir="res/drawable-hdpi" />
+		<source-file src="android/res/drawable-hdpi/ic_arrow_back.png" target-dir="res/drawable-hdpi" />
+		<source-file src="android/res/drawable-hdpi/ic_video_off_white_24dp.png" target-dir="res/drawable-hdpi" />
+		<source-file src="android/res/drawable-hdpi/ic_videocam.png" target-dir="res/drawable-hdpi" />
+		<source-file src="android/res/drawable-hdpi/ic_stop_screenshare.png" target-dir="res/drawable-hdpi" />
+		<source-file src="android/res/drawable-hdpi/ic_phonelink_ring.png" target-dir="res/drawable-hdpi" />
+		<source-file src="android/res/drawable-hdpi/ic_call_grey.png" target-dir="res/drawable-hdpi" />
+		<source-file src="android/res/drawable-hdpi/ic_speaker_phone.png" target-dir="res/drawable-hdpi" />
+		<source-file src="android/res/drawable-hdpi/ic_call_end_sm.png" target-dir="res/drawable-hdpi" />
+		<source-file src="android/res/drawable-hdpi/ic_phone_hangup.png" target-dir="res/drawable-hdpi" />
+		<source-file src="android/res/drawable-hdpi/ic_microphone_off_white_24dp.png" target-dir="res/drawable-hdpi" />
+		<source-file src="android/res/drawable-hdpi/ic_volume_medium_white_24dp.png" target-dir="res/drawable-hdpi" />
+		<source-file src="android/res/drawable-hdpi/ic_arrow_back_w.png" target-dir="res/drawable-hdpi" />
+		<source-file src="android/res/drawable-hdpi/ic_person.png" target-dir="res/drawable-hdpi" />
+		<source-file src="android/res/drawable-hdpi/ic_volume_low_white_24dp.png" target-dir="res/drawable-hdpi" />
+		<source-file src="android/res/drawable-hdpi/ic_volume_off_white_24dp.png" target-dir="res/drawable-hdpi" />
+		<source-file src="android/res/drawable-hdpi/ic_microphone_white_24dp.png" target-dir="res/drawable-hdpi" />
+		<source-file src="android/res/drawable-hdpi/ic_checkmark.png" target-dir="res/drawable-hdpi" />
+		<source-file src="android/res/drawable-hdpi/ic_person_big.png" target-dir="res/drawable-hdpi" />
+		<source-file src="android/res/drawable-hdpi/qb_logo.png" target-dir="res/drawable-hdpi" />
+		<source-file src="android/res/drawable-hdpi/ic_call.png" target-dir="res/drawable-hdpi" />
+		<source-file src="android/res/drawable-hdpi/ic_group.png" target-dir="res/drawable-hdpi" />
+		<source-file src="android/res/drawable-hdpi/ic_volume_on.png" target-dir="res/drawable-hdpi" />
+
+
+		<source-file src="android/res/menu/activity_login.xml" target-dir="res/menu" />
+		<source-file src="android/res/menu/screen_share_fragment.xml" target-dir="res/menu" />
+		<source-file src="android/res/menu/activity_opponents.xml" target-dir="res/menu" />
+		<source-file src="android/res/menu/conversation_fragment.xml" target-dir="res/menu" />
+		<source-file src="android/res/menu/activity_selected_opponents.xml" target-dir="res/menu" />
+
+
+		<source-file src="android/res/drawable-mdpi/ic_video_white_24dp.png" target-dir="res/drawable-mdpi" />
+		<source-file src="android/res/drawable-mdpi/ic_refresh.png" target-dir="res/drawable-mdpi" />
+		<source-file src="android/res/drawable-mdpi/ic_volume_high_white_24dp.png" target-dir="res/drawable-mdpi" />
+		<source-file src="android/res/drawable-mdpi/ic_accept_call.png" target-dir="res/drawable-mdpi" />
+		<source-file src="android/res/drawable-mdpi/ic_volume_off.png" target-dir="res/drawable-mdpi" />
+		<source-file src="android/res/drawable-mdpi/pres_img.png" target-dir="res/drawable-mdpi" />
+		<source-file src="android/res/drawable-mdpi/ic_videocam_w.png" target-dir="res/drawable-mdpi" />
+		<source-file src="android/res/drawable-mdpi/ic_microphone_off.png" target-dir="res/drawable-mdpi" />
+		<source-file src="android/res/drawable-mdpi/ic_camera_front.png" target-dir="res/drawable-mdpi" />
+		<source-file src="android/res/drawable-mdpi/ic_screen_share.png" target-dir="res/drawable-mdpi" />
+		<source-file src="android/res/drawable-mdpi/ic_video_white.png" target-dir="res/drawable-mdpi" />
+		<source-file src="android/res/drawable-mdpi/ic_camera_rear.png" target-dir="res/drawable-mdpi" />
+		<source-file src="android/res/drawable-mdpi/ic_microphone.png" target-dir="res/drawable-mdpi" />
+		<source-file src="android/res/drawable-mdpi/ic_arrow_back.png" target-dir="res/drawable-mdpi" />
+		<source-file src="android/res/drawable-mdpi/ic_video_off_white_24dp.png" target-dir="res/drawable-mdpi" />
+		<source-file src="android/res/drawable-mdpi/ic_videocam.png" target-dir="res/drawable-mdpi" />
+		<source-file src="android/res/drawable-mdpi/ic_stop_screenshare.png" target-dir="res/drawable-mdpi" />
+		<source-file src="android/res/drawable-mdpi/ic_phonelink_ring.png" target-dir="res/drawable-mdpi" />
+		<source-file src="android/res/drawable-mdpi/ic_call_grey.png" target-dir="res/drawable-mdpi" />
+		<source-file src="android/res/drawable-mdpi/ic_speaker_phone.png" target-dir="res/drawable-mdpi" />
+		<source-file src="android/res/drawable-mdpi/ic_call_end_sm.png" target-dir="res/drawable-mdpi" />
+		<source-file src="android/res/drawable-mdpi/ic_phone_hangup.png" target-dir="res/drawable-mdpi" />
+		<source-file src="android/res/drawable-mdpi/ic_microphone_off_white_24dp.png" target-dir="res/drawable-mdpi" />
+		<source-file src="android/res/drawable-mdpi/ic_volume_medium_white_24dp.png" target-dir="res/drawable-mdpi" />
+		<source-file src="android/res/drawable-mdpi/ic_arrow_back_w.png" target-dir="res/drawable-mdpi" />
+		<source-file src="android/res/drawable-mdpi/ic_person.png" target-dir="res/drawable-mdpi" />
+		<source-file src="android/res/drawable-mdpi/ic_volume_off_white_24dp.png" target-dir="res/drawable-mdpi" />
+		<source-file src="android/res/drawable-mdpi/ic_microphone_white_24dp.png" target-dir="res/drawable-mdpi" />
+		<source-file src="android/res/drawable-mdpi/ic_checkmark.png" target-dir="res/drawable-mdpi" />
+		<source-file src="android/res/drawable-mdpi/ic_person_big.png" target-dir="res/drawable-mdpi" />
+		<source-file src="android/res/drawable-mdpi/qb_logo.png" target-dir="res/drawable-mdpi" />
+		<source-file src="android/res/drawable-mdpi/ic_call.png" target-dir="res/drawable-mdpi" />
+		<source-file src="android/res/drawable-mdpi/ic_group.png" target-dir="res/drawable-mdpi" />
+		<source-file src="android/res/drawable-mdpi/ic_volume_on.png" target-dir="res/drawable-mdpi" />
+
+
+		<source-file src="android/res/mipmap-xhdpi/ic_notification.png" target-dir="res/mipmap-xhdpi" />
+		<source-file src="android/res/mipmap-xhdpi/ic_launcher.png" target-dir="res/mipmap-xhdpi" />
+
+
+		<source-file src="android/res/drawable-xxxhdpi/ic_video_white_24dp.png" target-dir="res/drawable-xxxhdpi" />
+		<source-file src="android/res/drawable-xxxhdpi/ic_refresh.png" target-dir="res/drawable-xxxhdpi" />
+		<source-file src="android/res/drawable-xxxhdpi/ic_volume_high_white_24dp.png" target-dir="res/drawable-xxxhdpi" />
+		<source-file src="android/res/drawable-xxxhdpi/ic_accept_call.png" target-dir="res/drawable-xxxhdpi" />
+		<source-file src="android/res/drawable-xxxhdpi/ic_volume_off.png" target-dir="res/drawable-xxxhdpi" />
+		<source-file src="android/res/drawable-xxxhdpi/pres_img.png" target-dir="res/drawable-xxxhdpi" />
+		<source-file src="android/res/drawable-xxxhdpi/ic_videocam_w.png" target-dir="res/drawable-xxxhdpi" />
+		<source-file src="android/res/drawable-xxxhdpi/ic_microphone_off.png" target-dir="res/drawable-xxxhdpi" />
+		<source-file src="android/res/drawable-xxxhdpi/ic_camera_front.png" target-dir="res/drawable-xxxhdpi" />
+		<source-file src="android/res/drawable-xxxhdpi/ic_screen_share.png" target-dir="res/drawable-xxxhdpi" />
+		<source-file src="android/res/drawable-xxxhdpi/ic_video_white.png" target-dir="res/drawable-xxxhdpi" />
+		<source-file src="android/res/drawable-xxxhdpi/ic_camera_rear.png" target-dir="res/drawable-xxxhdpi" />
+		<source-file src="android/res/drawable-xxxhdpi/ic_microphone.png" target-dir="res/drawable-xxxhdpi" />
+		<source-file src="android/res/drawable-xxxhdpi/ic_arrow_back.png" target-dir="res/drawable-xxxhdpi" />
+		<source-file src="android/res/drawable-xxxhdpi/ic_video_off_white_24dp.png" target-dir="res/drawable-xxxhdpi" />
+		<source-file src="android/res/drawable-xxxhdpi/ic_videocam.png" target-dir="res/drawable-xxxhdpi" />
+		<source-file src="android/res/drawable-xxxhdpi/ic_stop_screenshare.png" target-dir="res/drawable-xxxhdpi" />
+		<source-file src="android/res/drawable-xxxhdpi/ic_phonelink_ring.png" target-dir="res/drawable-xxxhdpi" />
+		<source-file src="android/res/drawable-xxxhdpi/ic_call_grey.png" target-dir="res/drawable-xxxhdpi" />
+		<source-file src="android/res/drawable-xxxhdpi/ic_speaker_phone.png" target-dir="res/drawable-xxxhdpi" />
+		<source-file src="android/res/drawable-xxxhdpi/ic_call_end_sm.png" target-dir="res/drawable-xxxhdpi" />
+		<source-file src="android/res/drawable-xxxhdpi/ic_phone_hangup.png" target-dir="res/drawable-xxxhdpi" />
+		<source-file src="android/res/drawable-xxxhdpi/ic_microphone_off_white_24dp.png" target-dir="res/drawable-xxxhdpi" />
+		<source-file src="android/res/drawable-xxxhdpi/ic_volume_medium_white_24dp.png" target-dir="res/drawable-xxxhdpi" />
+		<source-file src="android/res/drawable-xxxhdpi/ic_arrow_back_w.png" target-dir="res/drawable-xxxhdpi" />
+		<source-file src="android/res/drawable-xxxhdpi/ic_person.png" target-dir="res/drawable-xxxhdpi" />
+		<source-file src="android/res/drawable-xxxhdpi/ic_volume_low_white_24dp.png" target-dir="res/drawable-xxxhdpi" />
+		<source-file src="android/res/drawable-xxxhdpi/ic_volume_off_white_24dp.png" target-dir="res/drawable-xxxhdpi" />
+		<source-file src="android/res/drawable-xxxhdpi/ic_microphone_white_24dp.png" target-dir="res/drawable-xxxhdpi" />
+		<source-file src="android/res/drawable-xxxhdpi/ic_checkmark.png" target-dir="res/drawable-xxxhdpi" />
+		<source-file src="android/res/drawable-xxxhdpi/ic_person_big.png" target-dir="res/drawable-xxxhdpi" />
+		<source-file src="android/res/drawable-xxxhdpi/qb_logo.png" target-dir="res/drawable-xxxhdpi" />
+		<source-file src="android/res/drawable-xxxhdpi/ic_call.png" target-dir="res/drawable-xxxhdpi" />
+		<source-file src="android/res/drawable-xxxhdpi/ic_group.png" target-dir="res/drawable-xxxhdpi" />
+		<source-file src="android/res/drawable-xxxhdpi/ic_volume_on.png" target-dir="res/drawable-xxxhdpi" />
+
+
+		<source-file src="android/res/raw/beep.wav" target-dir="res/raw" />
+	</platform>
+
+<!-- IOS Settings -->
+	<platform name="ios">
+
+	    <header-file src="ios/src/QBPlugin.h" />
+		<source-file src="ios/src/QBPlugin.mm" />
+		<header-file src="ios/src/CallViewController.h" />
+		<source-file src="ios/src/CallViewController.m" />
+<!--		
+		<resource-file src="ios/src/CallViewController.xib" />
+
+		<header-file src="ios/src/CallViewController.h" />
+		<source-file src="ios/src/CallViewController.m" />
+		
+		<header-file src="ios/src/AlertSystem.h" />
+		<source-file src="ios/src/AlertSystem.m" />
+		
+		<header-file src="ios/src/ContactListCell.h" />
+		<source-file src="ios/src/ContactListCell.m" />
+		
+		<header-file src="ios/src/HomeViewController.h" />
+		<source-file src="ios/src/HomeViewController.m" />
+		
+		<header-file src="ios/src/ParticipantsVC.h" />
+		<source-file src="ios/src/ParticipantsVC.m" />
+		
+		<header-file src="ios/src/Protocols.h" />
+		
+		<header-file src="ios/src/RtccDelegate.h" />
+		<source-file src="ios/src/RtccDelegate.m" />
+		
+		<header-file src="ios/src/UIView+ClearBackground.h" />
+		<source-file src="ios/src/UIView+ClearBackground.m" />
+		
+		<header-file src="ios/res/support/zipFile.h" />
+		<source-file src="ios/res/support/zipFile.m" />
+
+		<resource-file src="ios/res/pictures.xcassets" />
+		<resource-file src="ios/res/support/ipad.storyboard" />
+		<resource-file src="ios/res/support/iphone.storyboard" />
+		
+		<resource-file src="ios/res/support/SynsorMed-Prefix.pch" />
+-->
+
+		<resource-file src="ios/res/images.xcassets" />
+		<resource-file src="ios/res/pictures.xcassets" />
+		<resource-file src="ios/res/VideoCall.storyboard" />
+		
+		<!--<framework src="libicucore.tbd" />	
+		<framework src="libz.tbd" />-->
+		<framework src="libc++.tbd" />
+		<framework src="libresolv.tbd" />
+		<framework src="libxml2.2.tbd" />
+		<framework src="CFNetwork.framework" />
+		<framework src="GLKit.framework" />
+		<framework src="MobileCoreServices.framework" />
+		<framework src="SystemConfiguration.framework" />
+		<framework src="VideoToolbox.framework" />
+		<framework src="AudioToolbox.framework" />
+		<framework src="Accelerate.framework" />
+		<framework src="CoreGraphics.framework" />
+		<framework src="CoreLocation.framework" />
+		<framework src="CoreData.framework" />
+		<framework src="CoreMedia.framework" />
+		<framework src="CoreMotion.framework" />
+		<framework src="CoreTelephony.framework" />
+		<framework src="CoreVideo.framework" />
+		<framework src="AVFoundation.framework" />
+		<framework src="QuartzCore.framework" />
+		<framework src="Security.framework" />
+
+		<framework src="ios/libs/Quickblox.framework" custom="true" />
+		<framework src="ios/libs/QuickbloxWebRTC.framework" custom="true" />
+
+		<config-file target="config.xml" parent="/*">
+			<feature name="videoPlugin">
+				<param name="ios-package" value="QBPlugin" />
+			</feature>
+		</config-file>
+
+		
+-->
+	</platform>
+</plugin>
