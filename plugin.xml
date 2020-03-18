@@ -23,6 +23,9 @@
 
 		<framework src="android/videoPlugin.gradle" custom="true" type="gradleReference"/>
 		<framework src="com.android.support:appcompat-v7:22.2.1" />
+		<framework src="com.android.support:recyclerview-v7:21+" />
+		<framework src="com.android.support:design:22.2.1" />
+		<framework src="com.android.support:support-v4:21+" />
 
 		<config-file target="res/xml/config.xml" parent="/*">
 			<feature name="videoPlugin">
