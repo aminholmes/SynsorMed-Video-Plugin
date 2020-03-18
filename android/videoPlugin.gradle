@@ -5,6 +5,14 @@ repositories{
    }
 }
 
+
+android {
+    defaultConfig {
+        versionName '1.0.0'
+    }
+}
+
+
 dependencies {
   compile (name:'quickblox-android-sdk-videochat-webrtc-3.9.3', ext:'aar')
   compile (name:'quickblox-android-sdk-core-3.9.3', ext:'aar')
