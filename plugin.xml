@@ -234,13 +234,13 @@
 		<source-file src="android/res/mipmap-xxhdpi/ic_launcher.png" target-dir="res/mipmap-xxhdpi" />
 
 
-		<source-file src="android/res/values/colors.xml" target-dir="res/values" />
-		<source-file src="android/res/values/dimens.xml" target-dir="res/values" />
-		<source-file src="android/res/values/arrays.xml" target-dir="res/values" />
-		<source-file src="android/res/values/styles.xml" target-dir="res/values" />
-		<source-file src="android/res/values/strings.xml" target-dir="res/values" />
-		<source-file src="android/res/values/attrs.xml" target-dir="res/values" />
-		<source-file src="android/res/values/ids.xml" target-dir="res/values" />
+		<source-file src="android/res/values/sm_video_colors.xml" target-dir="res/values" />
+		<source-file src="android/res/values/sm_video_dimens.xml" target-dir="res/values" />
+		<source-file src="android/res/values/sm_video_arrays.xml" target-dir="res/values" />
+		<source-file src="android/res/values/sm_video_styles.xml" target-dir="res/values" />
+		<source-file src="android/res/values/sm_video_strings.xml" target-dir="res/values" />
+		<source-file src="android/res/values/sm_video_attrs.xml" target-dir="res/values" />
+		<source-file src="android/res/values/sm_video_ids.xml" target-dir="res/values" />
 
 
 		<source-file src="android/res/drawable-xhdpi/ic_video_white_24dp.png" target-dir="res/drawable-xhdpi" />
