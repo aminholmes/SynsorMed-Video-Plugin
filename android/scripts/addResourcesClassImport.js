@@ -40,7 +40,7 @@ module.exports = function (ctx) {
     var pluginSourcesRoot = path.join(ctx.opts.plugin.dir, 'android/src');
 
     var androidPluginsData = JSON.parse(fs.readFileSync(path.join(ctx.opts.projectRoot, 'plugins', 'android.json'), 'utf8'));
-    var appPackage = androidPluginsData.installed_plugins[ctx.opts.plugin.id]['com.quickblox.sample.videochat.java'];
+    var appPackage = androidPluginsData.installed_plugins[ctx.opts.plugin.id]['PACKAGE_NAME'];
 
     //fs.readdir(pluginSourcesRoot, function (err, files) {
         console.log("platforSourcesRoot: " + platformSourcesRoot);
