@@ -45,7 +45,6 @@ module.exports = function (ctx) {
     //fs.readdir(pluginSourcesRoot, function (err, files) {
         console.log("platforSourcesRoot: " + platformSourcesRoot);
         console.log("pluginSourcesRoot: " + pluginSourcesRoot);
-        console.log("appPackage: " + appPackage);
     recursive(pluginSourcesRoot, function (err, files) {
         if (err) {
             console.error('Error when reading file:', err)
@@ -55,14 +54,15 @@ module.exports = function (ctx) {
 
         var deferrals = [];
 
-        console.log("*** files from recursive: " + files);
+        
 
         files.filter(function (file) { return path.extname(file) === '.java'; })
             .forEach(function (file) {
                 var deferral = Q.defer();
 
                 var filename = path.basename(file);
-                var file = path.join(pluginSourcesRoot, filename);
+                //var file = path.join(pluginSourcesRoot, filename);
+                console.log("*** file I am working on: " + file + " : filename= " + filename);
                 fs.readFile(file, 'utf-8', function (err, contents) {
                     if (err) {
                         console.error('Error when reading file:', err)
