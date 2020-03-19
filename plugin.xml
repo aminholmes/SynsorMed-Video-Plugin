@@ -22,11 +22,11 @@
 	<platform name="android">	
 
 		<framework src="android/videoPlugin.gradle" custom="true" type="gradleReference"/>
-		<framework src="com.android.support:appcompat-v7:28.0.0" />
+<!-- 		<framework src="com.android.support:appcompat-v7:28.0.0" />
 		<framework src="com.android.support:recyclerview-v7:28.0.0" />
 		<framework src="com.android.support:design:28.0.0" />
 		<framework src="com.android.support:support-v4:21+" />
-<!-- 		<framework src="com.github.johnkil.android-robototextview:robototextview:4.0.0" /> -->
+		<framework src="com.github.johnkil.android-robototextview:robototextview:4.0.0" /> -->
 
 		<config-file target="res/xml/config.xml" parent="/*">
 			<feature name="videoPlugin">
@@ -96,10 +96,10 @@
 		
 		<!-- This section is for all of the lib files -->
 
-		<source-file src="android/libs/quickblox-android-sdk-videochat-webrtc-3.9.3.aar" target-dir="libs" />
+<!-- 		<source-file src="android/libs/quickblox-android-sdk-videochat-webrtc-3.9.3.aar" target-dir="libs" />
 		<source-file src="android/libs/quickblox-android-sdk-core-3.9.3.aar" target-dir="libs" />
 		<source-file src="android/libs/quickblox-android-sdk-conference-3.9.3.aar" target-dir="libs" />
-		<source-file src="android/libs/quickblox-android-sdk-chat-3.9.3.aar" target-dir="libs" />
+		<source-file src="android/libs/quickblox-android-sdk-chat-3.9.3.aar" target-dir="libs" /> -->
 
 		<!-- This section is for all of the QB files -->
 
