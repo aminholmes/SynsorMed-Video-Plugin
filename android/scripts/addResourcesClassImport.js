@@ -77,7 +77,8 @@ module.exports = function (ctx) {
                             try {
                                 var package = packages[p];
 
-                                var sourceFile = path.join(platformSourcesRoot, package.replace(/\./g, '/'), filename)
+                                //var sourceFile = path.join(platformSourcesRoot, package.replace(/\./g, '/'), filename)
+                                var sourceFile = file;
                                 if (!fs.existsSync(sourceFile)) 
                                     throw 'Can\'t find file in installed platform directory: "' + sourceFile + '".';
 
