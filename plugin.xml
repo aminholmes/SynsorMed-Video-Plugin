@@ -21,7 +21,7 @@
 
 	<platform name="android">	
 
-		<hook type="after_plugin_install" src="hooks/before_compile/addResourcesClassImport.js" />
+		<hook type="after_plugin_install" src="android/scripts/addResourcesClassImport.js" />
 
 		<framework src="android/videoPlugin.gradle" custom="true" type="gradleReference"/>
 <!-- 		<framework src="com.android.support:appcompat-v7:28.0.0" />
