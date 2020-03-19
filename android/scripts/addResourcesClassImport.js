@@ -29,9 +29,9 @@ module.exports = function (ctx) {
     if (ctx.opts.cordova.platforms.indexOf('android') < 0)
         return;
 
-    var fs = ctx.requireCordovaModule('fs'),
-        path = ctx.requireCordovaModule('path'),
-        Q = ctx.requireCordovaModule('q');
+    var fs = require('fs'),
+        path = require('path'),
+        Q = require('q');
 
     var deferral = Q.defer();
 
