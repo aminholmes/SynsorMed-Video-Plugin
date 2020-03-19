@@ -1,4 +1,4 @@
-package com.quickblox.sample.videochat.java.fragments;
+package com.quickblox.sample.videochat.java.fragments; import com.synsormed.mobile.R;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -21,7 +21,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
-import com.quickblox.sample.videochat.java.R;
+
 import com.quickblox.sample.videochat.java.adapters.OpponentsFromCallAdapter;
 import com.quickblox.sample.videochat.java.services.CallService;
 import com.quickblox.sample.videochat.java.utils.SharedPrefsHelper;

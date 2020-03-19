@@ -1,11 +1,11 @@
-package com.quickblox.sample.videochat.java.utils;
+package com.quickblox.sample.videochat.java.utils; import com.synsormed.mobile.R;
 
 import com.quickblox.core.helper.StringifyArrayList;
 import com.quickblox.messages.QBPushNotifications;
 import com.quickblox.messages.model.QBEnvironment;
 import com.quickblox.messages.model.QBEvent;
 import com.quickblox.messages.model.QBNotificationType;
-import com.quickblox.sample.videochat.java.R;
+
 
 import org.json.JSONException;
 import org.json.JSONObject;

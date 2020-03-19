@@ -1,8 +1,8 @@
-package com.quickblox.sample.videochat.java.utils;
+package com.quickblox.sample.videochat.java.utils; import com.synsormed.mobile.R;
 
 import android.util.SparseArray;
 
-import com.quickblox.sample.videochat.java.R;
+
 import com.quickblox.videochat.webrtc.QBRTCTypes;
 
 public class QBRTCSessionUtils {

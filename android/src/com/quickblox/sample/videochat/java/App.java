@@ -1,4 +1,4 @@
-package com.quickblox.sample.videochat.java;
+package com.quickblox.sample.videochat.java; import com.synsormed.mobile.R;
 
 import android.app.Application;
 

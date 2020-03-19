@@ -1,4 +1,4 @@
-package com.quickblox.sample.videochat.java.activities;
+package com.quickblox.sample.videochat.java.activities; import com.synsormed.mobile.R;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
@@ -24,7 +24,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.quickblox.chat.QBChatService;
-import com.quickblox.sample.videochat.java.R;
+
 import com.quickblox.sample.videochat.java.db.QbUsersDbManager;
 import com.quickblox.sample.videochat.java.fragments.AudioConversationFragment;
 import com.quickblox.sample.videochat.java.fragments.BaseConversationFragment;

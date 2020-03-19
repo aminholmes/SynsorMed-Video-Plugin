@@ -1,4 +1,4 @@
-package com.quickblox.sample.videochat.java.fragments;
+package com.quickblox.sample.videochat.java.fragments; import com.synsormed.mobile.R;
 
 import android.os.Bundle;
 import android.os.Handler;
@@ -8,7 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.quickblox.sample.videochat.java.R;
+
 
 import java.lang.ref.WeakReference;
 

@@ -1,10 +1,10 @@
-package com.quickblox.sample.videochat.java.utils;
+package com.quickblox.sample.videochat.java.utils; import com.synsormed.mobile.R;
 
 import android.content.Context;
 import android.text.TextUtils;
 import android.widget.EditText;
 
-import com.quickblox.sample.videochat.java.R;
+
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

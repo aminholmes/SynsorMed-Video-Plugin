@@ -1,4 +1,4 @@
-package com.quickblox.sample.videochat.java.activities;
+package com.quickblox.sample.videochat.java.activities; import com.synsormed.mobile.R;
 
 import android.app.PendingIntent;
 import android.content.Context;
@@ -16,7 +16,7 @@ import com.quickblox.core.QBEntityCallback;
 import com.quickblox.core.exception.QBResponseException;
 import com.quickblox.core.helper.Utils;
 import com.quickblox.sample.videochat.java.App;
-import com.quickblox.sample.videochat.java.R;
+
 import com.quickblox.sample.videochat.java.services.LoginService;
 import com.quickblox.sample.videochat.java.utils.Consts;
 import com.quickblox.sample.videochat.java.utils.KeyboardUtils;

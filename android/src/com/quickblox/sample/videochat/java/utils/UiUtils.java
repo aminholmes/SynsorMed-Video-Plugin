@@ -1,11 +1,11 @@
-package com.quickblox.sample.videochat.java.utils;
+package com.quickblox.sample.videochat.java.utils; import com.synsormed.mobile.R;
 
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 
 import com.quickblox.sample.videochat.java.App;
-import com.quickblox.sample.videochat.java.R;
+
 
 import java.util.HashMap;
 import java.util.Map;

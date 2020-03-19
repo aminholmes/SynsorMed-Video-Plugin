@@ -1,4 +1,4 @@
-package com.quickblox.sample.videochat.java.activities;
+package com.quickblox.sample.videochat.java.activities; import com.synsormed.mobile.R;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -6,7 +6,7 @@ import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
 
-import com.quickblox.sample.videochat.java.R;
+
 import com.quickblox.sample.videochat.java.utils.PermissionsChecker;
 import com.quickblox.sample.videochat.java.utils.SharedPrefsHelper;
 import com.quickblox.sample.videochat.java.utils.ToastUtils;

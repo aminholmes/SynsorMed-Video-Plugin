@@ -1,4 +1,4 @@
-package com.quickblox.sample.videochat.java.adapters;
+package com.quickblox.sample.videochat.java.adapters; import com.synsormed.mobile.R;
 
 import android.content.Context;
 import android.util.Log;
@@ -11,7 +11,7 @@ import android.widget.FrameLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.quickblox.sample.videochat.java.R;
+
 import com.quickblox.sample.videochat.java.fragments.BaseConversationFragment;
 import com.quickblox.sample.videochat.java.utils.QBRTCSessionUtils;
 import com.quickblox.users.model.QBUser;

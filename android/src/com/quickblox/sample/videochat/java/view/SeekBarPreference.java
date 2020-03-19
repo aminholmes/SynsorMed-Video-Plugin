@@ -1,4 +1,4 @@
-package com.quickblox.sample.videochat.java.view;
+package com.quickblox.sample.videochat.java.view; import com.synsormed.mobile.R;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -8,7 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.SeekBar;
 
-import com.quickblox.sample.videochat.java.R;
+
 
 public class SeekBarPreference extends Preference implements SeekBar.OnSeekBarChangeListener {
 

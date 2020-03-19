@@ -1,4 +1,4 @@
-package com.quickblox.sample.videochat.java.fragments;
+package com.quickblox.sample.videochat.java.fragments; import com.synsormed.mobile.R;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -12,7 +12,7 @@ import android.widget.TextView;
 import android.widget.ToggleButton;
 
 import com.quickblox.chat.QBChatService;
-import com.quickblox.sample.videochat.java.R;
+
 import com.quickblox.sample.videochat.java.activities.CallActivity;
 import com.quickblox.sample.videochat.java.db.QbUsersDbManager;
 import com.quickblox.sample.videochat.java.services.CallService;

@@ -1,4 +1,4 @@
-package com.quickblox.sample.videochat.java.fragments;
+package com.quickblox.sample.videochat.java.fragments; import com.synsormed.mobile.R;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,7 +9,7 @@ import android.widget.ImageView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.quickblox.sample.videochat.java.App;
-import com.quickblox.sample.videochat.java.R;
+
 
 import androidx.annotation.IdRes;
 import androidx.annotation.NonNull;

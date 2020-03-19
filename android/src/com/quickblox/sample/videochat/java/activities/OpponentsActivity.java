@@ -1,4 +1,4 @@
-package com.quickblox.sample.videochat.java.activities;
+package com.quickblox.sample.videochat.java.activities; import com.synsormed.mobile.R;
 
 import android.app.ActivityManager;
 import android.app.NotificationManager;
@@ -15,7 +15,7 @@ import com.quickblox.core.exception.QBResponseException;
 import com.quickblox.core.request.GenericQueryRule;
 import com.quickblox.core.request.QBPagedRequestBuilder;
 import com.quickblox.messages.services.SubscribeService;
-import com.quickblox.sample.videochat.java.R;
+
 import com.quickblox.sample.videochat.java.adapters.UsersAdapter;
 import com.quickblox.sample.videochat.java.db.QbUsersDbManager;
 import com.quickblox.sample.videochat.java.services.CallService;

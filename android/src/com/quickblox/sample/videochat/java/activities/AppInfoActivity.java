@@ -1,4 +1,4 @@
-package com.quickblox.sample.videochat.java.activities;
+package com.quickblox.sample.videochat.java.activities; import com.synsormed.mobile.R;
 
 import android.content.Context;
 import android.content.Intent;
@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 import com.quickblox.auth.session.QBSettings;
 import com.quickblox.sample.videochat.java.BuildConfig;
-import com.quickblox.sample.videochat.java.R;
+
 
 
 public class AppInfoActivity extends BaseActivity {

@@ -1,4 +1,4 @@
-package com.quickblox.sample.videochat.java.services;
+package com.quickblox.sample.videochat.java.services; import com.synsormed.mobile.R;
 
 import android.app.Notification;
 import android.app.NotificationChannel;
@@ -21,7 +21,7 @@ import android.util.Log;
 import com.quickblox.chat.QBChatService;
 import com.quickblox.core.QBEntityCallback;
 import com.quickblox.core.exception.QBResponseException;
-import com.quickblox.sample.videochat.java.R;
+
 import com.quickblox.sample.videochat.java.activities.CallActivity;
 import com.quickblox.sample.videochat.java.db.QbUsersDbManager;
 import com.quickblox.sample.videochat.java.fragments.AudioConversationFragment;

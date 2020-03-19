@@ -1,11 +1,11 @@
-package com.quickblox.sample.videochat.java.activities;
+package com.quickblox.sample.videochat.java.activities; import com.synsormed.mobile.R;
 
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.widget.TextView;
 
-import com.quickblox.sample.videochat.java.R;
+
 import com.quickblox.sample.videochat.java.services.LoginService;
 import com.quickblox.sample.videochat.java.utils.SharedPrefsHelper;
 

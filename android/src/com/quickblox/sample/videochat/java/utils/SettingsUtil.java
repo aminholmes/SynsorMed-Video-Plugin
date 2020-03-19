@@ -1,11 +1,11 @@
-package com.quickblox.sample.videochat.java.utils;
+package com.quickblox.sample.videochat.java.utils; import com.synsormed.mobile.R;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.util.Log;
 
-import com.quickblox.sample.videochat.java.R;
+
 import com.quickblox.videochat.webrtc.QBRTCConfig;
 import com.quickblox.videochat.webrtc.QBRTCMediaConfig;
 

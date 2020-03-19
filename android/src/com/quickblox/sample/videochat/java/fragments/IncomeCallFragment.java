@@ -1,4 +1,4 @@
-package com.quickblox.sample.videochat.java.fragments;
+package com.quickblox.sample.videochat.java.fragments; import com.synsormed.mobile.R;
 
 import android.app.Activity;
 import android.content.Context;
@@ -22,7 +22,7 @@ import com.quickblox.core.exception.QBResponseException;
 import com.quickblox.core.request.GenericQueryRule;
 import com.quickblox.core.request.QBPagedRequestBuilder;
 import com.quickblox.sample.videochat.java.App;
-import com.quickblox.sample.videochat.java.R;
+
 import com.quickblox.sample.videochat.java.activities.CallActivity;
 import com.quickblox.sample.videochat.java.db.QbUsersDbManager;
 import com.quickblox.sample.videochat.java.utils.CollectionsUtils;

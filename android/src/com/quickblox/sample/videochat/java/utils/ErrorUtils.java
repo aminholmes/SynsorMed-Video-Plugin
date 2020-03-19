@@ -1,4 +1,4 @@
-package com.quickblox.sample.videochat.java.utils;
+package com.quickblox.sample.videochat.java.utils; import com.synsormed.mobile.R;
 
 import android.content.Context;
 import android.os.Handler;
@@ -8,7 +8,7 @@ import android.view.View;
 import com.google.android.material.snackbar.Snackbar;
 import com.quickblox.core.exception.QBResponseException;
 import com.quickblox.sample.videochat.java.App;
-import com.quickblox.sample.videochat.java.R;
+
 
 import java.util.List;
 

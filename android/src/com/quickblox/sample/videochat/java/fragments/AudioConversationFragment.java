@@ -1,4 +1,4 @@
-package com.quickblox.sample.videochat.java.fragments;
+package com.quickblox.sample.videochat.java.fragments; import com.synsormed.mobile.R;
 
 import android.view.View;
 import android.widget.CompoundButton;
@@ -6,7 +6,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
-import com.quickblox.sample.videochat.java.R;
+
 import com.quickblox.sample.videochat.java.activities.CallActivity;
 import com.quickblox.sample.videochat.java.utils.CollectionsUtils;
 import com.quickblox.sample.videochat.java.utils.SharedPrefsHelper;

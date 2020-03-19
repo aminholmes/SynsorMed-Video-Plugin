@@ -1,4 +1,4 @@
-package com.quickblox.sample.videochat.java.adapters;
+package com.quickblox.sample.videochat.java.adapters; import com.synsormed.mobile.R;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -8,7 +8,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.quickblox.sample.videochat.java.R;
+
 import com.quickblox.sample.videochat.java.utils.UiUtils;
 import com.quickblox.users.model.QBUser;
 

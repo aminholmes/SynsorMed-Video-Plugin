@@ -1,4 +1,4 @@
-package com.quickblox.sample.videochat.java.activities;
+package com.quickblox.sample.videochat.java.activities; import com.synsormed.mobile.R;
 
 import android.content.Context;
 import android.content.Intent;
@@ -8,7 +8,7 @@ import android.preference.EditTextPreference;
 import android.preference.Preference;
 import android.view.View;
 
-import com.quickblox.sample.videochat.java.R;
+
 import com.quickblox.sample.videochat.java.fragments.SettingsFragment;
 import com.quickblox.sample.videochat.java.utils.ToastUtils;
 import com.quickblox.sample.videochat.java.view.SeekBarPreference;
