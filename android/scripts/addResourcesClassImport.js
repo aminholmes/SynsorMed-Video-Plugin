@@ -32,14 +32,15 @@ module.exports = function (ctx) {
     var fs = require('fs'),
         path = require('path'),
         Q = require('q');
+        recursive = require('recursive-readdir');
 
     var deferral = Q.defer();
 
-    var platformSourcesRoot = path.join(ctx.opts.projectRoot, 'platforms/android/src');
-    var pluginSourcesRoot = path.join(ctx.opts.plugin.dir, 'src/android');
+    var platformSourcesRoot = path.join(ctx.opts.projectRoot, 'platforms/android/app/src');
+    var pluginSourcesRoot = path.join(ctx.opts.plugin.dir, 'android/src');
 
     var androidPluginsData = JSON.parse(fs.readFileSync(path.join(ctx.opts.projectRoot, 'plugins', 'android.json'), 'utf8'));
-    var appPackage = androidPluginsData.installed_plugins[ctx.opts.plugin.id]['PACKAGE_NAME'];
+    var appPackage = androidPluginsData.installed_plugins[ctx.opts.plugin.id]['com.quickblox.sample.videochat.java'];
 
     fs.readdir(pluginSourcesRoot, function (err, files) {
         if (err) {
