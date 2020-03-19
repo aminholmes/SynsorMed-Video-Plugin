@@ -10,7 +10,7 @@ dependencies {
 	implementation "com.quickblox:quickblox-android-sdk-videochat-webrtc:3.9.2"
 	implementation "com.quickblox:quickblox-android-sdk-messages:3.9.2"
 
-	implementation "com.google.firebase:firebase-core:16.0.8"
+	//implementation "com.google.firebase:firebase-core:16.0.8"
 	implementation "com.navercorp.pulltorefresh:library:3.2.3@aar"
 	implementation("com.crashlytics.sdk.android:crashlytics:2.9.5@aar") {
 		transitive = true
