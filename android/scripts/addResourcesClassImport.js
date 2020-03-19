@@ -42,7 +42,11 @@ module.exports = function (ctx) {
     var androidPluginsData = JSON.parse(fs.readFileSync(path.join(ctx.opts.projectRoot, 'plugins', 'android.json'), 'utf8'));
     var appPackage = androidPluginsData.installed_plugins[ctx.opts.plugin.id]['com.quickblox.sample.videochat.java'];
 
-    fs.readdir(pluginSourcesRoot, function (err, files) {
+    //fs.readdir(pluginSourcesRoot, function (err, files) {
+        console.log("platforSourcesRoot: " + platformSourcesRoot);
+        console.log("pluginSourcesRoot: " + pluginSourcesRoot);
+        console.log("appPackage: " + appPackage);
+    recursive(pluginSourcesRoot, function (err, files) {
         if (err) {
             console.error('Error when reading file:', err)
             deferral.reject();
@@ -50,6 +54,8 @@ module.exports = function (ctx) {
         }
 
         var deferrals = [];
+
+        console.log("*** files from recursive: " + files);
 
         files.filter(function (file) { return path.extname(file) === '.java'; })
             .forEach(function (file) {
