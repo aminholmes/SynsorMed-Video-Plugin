@@ -15,9 +15,9 @@ repositories{
 dependencies {
 
 	implementation "com.quickblox:quickblox-android-sdk-videochat-webrtc:3.9.2"
-	implementation ("com.quickblox:quickblox-android-sdk-messages:3.9.2"){
-		//exclude group: 'com.android.support', module: 'support-v4'
-	}
+	// implementation ("com.quickblox:quickblox-android-sdk-messages:3.9.2"){
+	// 	exclude group: 'com.android.support', module: 'support-v4'
+	// }
 
 	//implementation "com.google.firebase:firebase-core:16.0.8"
 	implementation "com.navercorp.pulltorefresh:library:3.2.3@aar"
@@ -28,10 +28,6 @@ dependencies {
 	implementation "com.github.johnkil.android-robototextview:robototextview:4.0.0"
 	implementation "com.github.bumptech.glide:glide:3.6.1"
 
-	// compile (name:'quickblox-android-sdk-videochat-webrtc-3.9.3', ext:'aar')
-	// compile (name:'quickblox-android-sdk-core-3.9.3', ext:'aar')
-	// compile (name:'quickblox-android-sdk-conference-3.9.3', ext:'aar')
-	// compile (name:'quickblox-android-sdk-chat-3.9.3', ext:'aar')
 }
 
 android {
