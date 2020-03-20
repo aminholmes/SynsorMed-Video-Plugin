@@ -26,8 +26,8 @@
 		<framework src="android/videoPlugin.gradle" custom="true" type="gradleReference"/>
 		<framework src="com.android.support:appcompat-v7:28.0.0" />
 		<framework src="com.android.support:recyclerview-v7:28.0.0" />
-		<framework src="com.android.support:design:28.0.0" />
-		<framework src="com.android.support:support-v4:21+" />
+	<!-- 	<framework src="com.android.support:design:28.0.0" /> -->
+	<!-- 	<framework src="com.android.support:support-v4:21+" /> -->
 
 		<framework src="com.quickblox:quickblox-android-sdk-videochat-webrtc:3.9.2" />
 		<framework src="com.quickblox:quickblox-android-sdk-messages:3.9.2" />
