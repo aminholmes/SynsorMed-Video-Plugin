@@ -8,14 +8,16 @@ repositories{
     }
 }
 
-configurations.all {
-	exclude group: 'com.android.support', module: 'support-v4'
-}
+// configurations.all {
+// 	exclude group: 'com.android.support', module: 'support-v4'
+// }
 
 dependencies {
 
 	implementation "com.quickblox:quickblox-android-sdk-videochat-webrtc:3.9.2"
-	implementation ("com.quickblox:quickblox-android-sdk-messages:3.9.2")
+	implementation ("com.quickblox:quickblox-android-sdk-messages:3.9.2"){
+		exclude group: 'com.android.support', module: 'support-v4'
+	}
 
 	//implementation "com.google.firebase:firebase-core:16.0.8"
 	implementation "com.navercorp.pulltorefresh:library:3.2.3@aar"
@@ -39,5 +41,3 @@ android {
 	}
 }
 
-android.useAndroidX=true
-android.enableJetifier=true
