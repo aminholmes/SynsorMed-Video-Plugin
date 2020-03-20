@@ -10,31 +10,17 @@ repositories{
 
 dependencies {
 
-	implementation ("com.quickblox:quickblox-android-sdk-videochat-webrtc:3.9.2"){
-		exclude group: 'com.android.support', module:'support-v4'
-	}
-	
-	implementation ("com.quickblox:quickblox-android-sdk-messages:3.9.2"){
-		exclude group: 'com.android.support', module:'support-media-compat'
-	}
+	implementation "com.quickblox:quickblox-android-sdk-videochat-webrtc:3.9.2"
+	//implementation "com.quickblox:quickblox-android-sdk-messages:3.9.2"
 
 	//implementation "com.google.firebase:firebase-core:16.0.8"
-	implementation ("com.navercorp.pulltorefresh:library:3.2.3@aar"){
-		exclude group: 'com.android.support', module:'support-v4'
-	}
+	implementation "com.navercorp.pulltorefresh:library:3.2.3@aar"
 	implementation("com.crashlytics.sdk.android:crashlytics:2.9.5@aar") {
 		transitive = true
-		exclude group: 'com.android.support', module:'support-v4'
 	}
-	implementation ("com.google.android.material:material:1.0.0"){
-		exclude group: 'com.android.support', module:'support-v4'
-	}
-	implementation ("com.github.johnkil.android-robototextview:robototextview:4.0.0"){
-		exclude group: 'com.android.support', module:'support-v4'
-	}
-	implementation ("com.github.bumptech.glide:glide:3.6.1"){
-		exclude group: 'com.android.support', module:'support-v4'
-	}
+	implementation "com.google.android.material:material:1.0.0"
+	implementation "com.github.johnkil.android-robototextview:robototextview:4.0.0"
+	implementation "com.github.bumptech.glide:glide:3.6.1"
 
 	// compile (name:'quickblox-android-sdk-videochat-webrtc-3.9.3', ext:'aar')
 	// compile (name:'quickblox-android-sdk-core-3.9.3', ext:'aar')
