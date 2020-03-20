@@ -15,7 +15,7 @@ dependencies {
 	}
 	
 	implementation ("com.quickblox:quickblox-android-sdk-messages:3.9.2"){
-		exclude group: 'com.android.support', module:'support-v4'
+		exclude group: 'com.android.support', module:'support-media-compat'
 	}
 
 	//implementation "com.google.firebase:firebase-core:16.0.8"
