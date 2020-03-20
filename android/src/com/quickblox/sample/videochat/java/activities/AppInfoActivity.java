@@ -11,7 +11,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.quickblox.auth.session.QBSettings;
-import com.quickblox.sample.videochat.java.BuildConfig;
+// import com.quickblox.sample.videochat.java.BuildConfig;
 
 
 
@@ -56,8 +56,8 @@ public class AppInfoActivity extends BaseActivity {
     }
 
     public void fillUI() {
-        appVersionTextView.setText(BuildConfig.VERSION_NAME);
-        sdkVersionTextView.setText(com.quickblox.BuildConfig.VERSION_NAME);
+        appVersionTextView.setText("1.0.0");
+        sdkVersionTextView.setText("1.0.0");
         appIDTextView.setText(QBSettings.getInstance().getApplicationId());
         authKeyTextView.setText(QBSettings.getInstance().getAuthorizationKey());
         authSecretTextView.setText(QBSettings.getInstance().getAuthorizationSecret());
@@ -65,9 +65,9 @@ public class AppInfoActivity extends BaseActivity {
         apiDomainTextView.setText(QBSettings.getInstance().getServerApiDomain());
         chatDomainTextView.setText(QBSettings.getInstance().getChatEndpoint());
 
-        if (BuildConfig.IS_QA) {
-            String appVersion = BuildConfig.VERSION_NAME;
-            String versionQACode = String.valueOf(BuildConfig.VERSION_QA_CODE);
+        if (false) {
+            String appVersion = "1.0.0";
+            String versionQACode = String.valueOf("1.0.0");
             String qaVersion = appVersion + "." + versionQACode;
             Spannable spannable = new SpannableString(qaVersion);
             spannable.setSpan(new ForegroundColorSpan(Color.RED), appVersion.length() + 1,

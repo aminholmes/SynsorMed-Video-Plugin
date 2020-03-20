@@ -30,7 +30,7 @@ public class App extends Application {
     }
 
     private void initFabric() {
-        if (!BuildConfig.DEBUG) {
+        if (false) {
             Fabric.with(this, new Crashlytics());
         }
     }
