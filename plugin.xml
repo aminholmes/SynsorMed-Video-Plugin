@@ -24,22 +24,22 @@
 		<!-- <hook type="after_plugin_install" src="android/scripts/addResourcesClassImport.js" /> -->
 
 		<framework src="android/videoPlugin.gradle" custom="true" type="gradleReference"/>
-		<framework src="com.android.support:appcompat-v7:28.0.0" />
+	<!-- 	<framework src="com.android.support:appcompat-v7:28.0.0" /> -->
 	<!-- 	<framework src="com.android.support:recyclerview-v7:28.0.0" /> -->
 	<!-- 	<framework src="com.android.support:design:28.0.0" /> -->
 	<!-- 	<framework src="com.android.support:support-v4:21+" /> -->
 
-		<framework src="com.quickblox:quickblox-android-sdk-videochat-webrtc:3.9.2" />
+<!-- 		<framework src="com.quickblox:quickblox-android-sdk-videochat-webrtc:3.9.2" />
 		<framework src="com.quickblox:quickblox-android-sdk-messages:3.9.2" />
 		<framework src="com.navercorp.pulltorefresh:library:3.2.3@aar" />
 		<framework src="com.crashlytics.sdk.android:crashlytics:2.9.5@aar" />
 		<framework src="com.google.android.material:material:1.0.0" />
 		<framework src="com.github.johnkil.android-robototextview:robototextview:4.0.0" />
-		<framework src="com.github.bumptech.glide:glide:3.6.1" />
+		<framework src="com.github.bumptech.glide:glide:3.6.1" /> -->
 
 		<config-file target="res/xml/config.xml" parent="/*">
 			<feature name="videoPlugin">
-				<param name="android-package" value="com.quickblox.sample.videochat.java.sm_video_phonegap" />
+				<param name="android-package" value="com.quickblox.sample.videochat.java.SM_video_phonegap" />
 			</feature>
 		</config-file>
 
