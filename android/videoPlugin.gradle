@@ -9,9 +9,9 @@ repositories{
     }
 }
 
-// configurations.all {
-// 	exclude group: 'com.android.support', module: 'support-v4'
-// }
+configurations.all {
+	exclude group: 'com.android.support', module: 'support-media-compat'
+}
 
 dependencies {
 
