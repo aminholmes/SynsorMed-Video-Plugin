@@ -11,6 +11,7 @@ repositories{
 
 configurations.all {
 	exclude group: 'com.android.support', module: 'support-media-compat'
+	exclude group: "androidx.vectordrawable", module: "vectordrawable"
 	// resolutionStrategy {
  //       // force "com.google.firebase:firebase-core:16.0.8"
  //       force "com.google.firebase:firebase-analytics:16.0.6"
