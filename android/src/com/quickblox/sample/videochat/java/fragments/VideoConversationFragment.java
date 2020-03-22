@@ -131,7 +131,7 @@ public class VideoConversationFragment extends BaseConversationFragment implemen
         super.initFields();
         localViewOnClickListener = new LocalViewOnClickListener();
         amountOpponents = opponents.size();
-        allOpponents = Collections.synchronizedList(new ArrayList<>(opponents.size()));
+        allOpponents = Collections.synchronizedList(new ArrayList<int>(opponents.size()));
         allOpponents.addAll(opponents);
 
         timerCallText = getActivity().findViewById(R.id.timer_call);
