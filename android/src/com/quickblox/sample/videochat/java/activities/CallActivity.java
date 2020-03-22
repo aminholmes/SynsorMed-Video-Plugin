@@ -724,7 +724,7 @@ public class CallActivity extends BaseActivity implements IncomeCallFragmentCall
 
     private class CallTimerCallback implements CallService.CallTimerListener {
         @Override
-        public void onCallTimeUpdate(String time) {
+        public void onCallTimeUpdate(final String time) {
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
