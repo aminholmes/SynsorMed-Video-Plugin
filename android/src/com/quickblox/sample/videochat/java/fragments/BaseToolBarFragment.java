@@ -55,7 +55,7 @@ public abstract class BaseToolBarFragment extends Fragment {
 
         FragmentLifeCycleHandler(Fragment fragment) {
 
-            this.fragmentRef = new WeakReference<>(fragment);
+            this.fragmentRef = new WeakReference<Fragment>(fragment);
         }
 
         @Override

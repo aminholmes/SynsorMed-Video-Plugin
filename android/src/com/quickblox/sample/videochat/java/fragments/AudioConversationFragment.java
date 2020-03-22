@@ -95,7 +95,7 @@ public class AudioConversationFragment extends BaseConversationFragment implemen
     }
 
     private String getOtherOpponentsNames() {
-        ArrayList<QBUser> otherOpponents = new ArrayList<>();
+        ArrayList<QBUser> otherOpponents = new ArrayList<QBUser>();
         otherOpponents.addAll(opponents);
         otherOpponents.remove(0);
         return CollectionsUtils.makeStringFromUsersFullNames(otherOpponents);

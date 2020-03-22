@@ -161,7 +161,7 @@ public class IncomeCallFragment extends Fragment implements Serializable, View.O
     private void updateLastUsersFromServer() {
         progressUserName.setVisibility(View.VISIBLE);
 
-        ArrayList<GenericQueryRule> rules = new ArrayList<>();
+        ArrayList<GenericQueryRule> rules = new ArrayList<GenericQueryRule>();
         rules.add(new GenericQueryRule(ORDER_RULE, ORDER_DESC_UPDATED));
 
         QBPagedRequestBuilder qbPagedRequestBuilder = new QBPagedRequestBuilder();

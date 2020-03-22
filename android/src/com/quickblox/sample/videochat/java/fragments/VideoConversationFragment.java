@@ -199,7 +199,7 @@ public class VideoConversationFragment extends BaseConversationFragment implemen
         if (view == null) {
             return;
         }
-        opponentViewHolders = new SparseArray<>(opponents.size());
+        opponentViewHolders = new SparseArray<int>(opponents.size());
         isRemoteShown = false;
 
         localVideoView = (QBRTCSurfaceView) view.findViewById(R.id.local_video_view);

@@ -128,9 +128,9 @@ public abstract class BaseConversationFragment extends BaseToolBarFragment imple
         super.onStart();
         if (conversationFragmentCallback != null) {
             if (isIncomingCall) {
-                conversationFragmentCallback.acceptCall(new HashMap<>());
+                conversationFragmentCallback.acceptCall(new HashMap<String, String>());
             } else {
-                conversationFragmentCallback.startCall(new HashMap<>());
+                conversationFragmentCallback.startCall(new HashMap<String, String>());
             }
         }
     }

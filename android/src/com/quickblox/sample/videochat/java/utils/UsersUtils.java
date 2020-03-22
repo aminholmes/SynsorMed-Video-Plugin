@@ -15,7 +15,7 @@ public class UsersUtils {
     private static QbUsersDbManager dbManager;
 
     public static ArrayList<QBUser> getListAllUsersFromIds(ArrayList<QBUser> existedUsers, List<Integer> allIds) {
-        ArrayList<QBUser> qbUsers = new ArrayList<>();
+        ArrayList<QBUser> qbUsers = new ArrayList<QBUser>();
         for (Integer userId : allIds) {
             QBUser stubUser = createStubUserById(userId);
             if (!existedUsers.contains(stubUser)) {
