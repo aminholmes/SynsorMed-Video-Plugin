@@ -186,9 +186,9 @@ public class CallService extends Service {
         builder.setContentTitle(notificationTitle);
         builder.setContentText(notificationText);
         builder.setWhen(System.currentTimeMillis());
-        builder.setSmallIcon(R.mipmap.ic_launcher);
+        builder.setSmallIcon(R.mipmap.ic_notification);
 
-        Bitmap bitmapIcon = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher);
+        Bitmap bitmapIcon = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_notification);
         builder.setLargeIcon(bitmapIcon);
 
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
