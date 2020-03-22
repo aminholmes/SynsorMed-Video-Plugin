@@ -257,7 +257,7 @@ public class VideoConversationFragment extends BaseConversationFragment implemen
             while (entryIterator.hasNext()) {
                 final Map.Entry<Integer, QBRTCVideoTrack> entry = entryIterator.next();
                 Integer userID = entry.getKey();
-                QBRTCVideoTrack videoTrack = entry.getValue();
+                final QBRTCVideoTrack videoTrack = entry.getValue();
                 Log.d(TAG, "Checking Ability to Restore Session for User:" + userID);
 
                 if (userID.equals(currentUser.getId())) {
