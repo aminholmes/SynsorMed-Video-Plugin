@@ -52,7 +52,7 @@ public class QbUsersDbManager {
                 qbUser.setId(c.getInt(userIdColIndex));
                 qbUser.setPassword(c.getString(userPassColIndex));
 
-                StringifyArrayList<String> tags = new StringifyArrayList<>();
+                StringifyArrayList<String> tags = new StringifyArrayList<String>();
                 tags.add(c.getString(userTagColIndex));
                 qbUser.setTags(tags);
 

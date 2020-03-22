@@ -130,7 +130,7 @@ public class OpponentsActivity extends BaseActivity {
             public void onError(QBResponseException e) {
                 Log.d(TAG, "Error load users" + e.getMessage());
                 hideProgressDialog();
-                showErrorSnackbar(R.string.loading_users_error, e, v -> loadUsers());
+                showErrorSnackbar(R.string.loading_users_error, e, this::loadUsers());
             }
         });
     }
