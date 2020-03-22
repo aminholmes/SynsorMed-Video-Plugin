@@ -34,7 +34,7 @@ public class UsersUtils {
     }
 
     public static ArrayList<Integer> getIdsNotLoadedUsers(ArrayList<QBUser> existedUsers, List<Integer> allIds) {
-        ArrayList<Integer> idsNotLoadedUsers = new ArrayList<>();
+        ArrayList<Integer> idsNotLoadedUsers = new ArrayList<Integer>();
         for (Integer userId : allIds) {
             QBUser stubUser = createStubUserById(userId);
             if (!existedUsers.contains(stubUser)) {

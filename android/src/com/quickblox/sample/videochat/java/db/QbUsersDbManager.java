@@ -32,7 +32,7 @@ public class QbUsersDbManager {
     }
 
     public ArrayList<QBUser> getAllUsers() {
-        ArrayList<QBUser> allUsers = new ArrayList<>();
+        ArrayList<QBUser> allUsers = new ArrayList<QBUser>();
         DbHelper dbHelper = new DbHelper(mContext);
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         Cursor c = db.query(DbHelper.DB_TABLE_NAME, null, null, null, null, null, null);
@@ -87,7 +87,7 @@ public class QbUsersDbManager {
                     qbUser.setId(c.getInt(userIdColIndex));
                     qbUser.setPassword(c.getString(userPassColIndex));
 
-                    StringifyArrayList<String> tags = new StringifyArrayList<>();
+                    StringifyArrayList<String> tags = new StringifyArrayList<String>();
                     tags.add(c.getString(userTagColIndex).split(","));
                     qbUser.setTags(tags);
                     break;
@@ -134,7 +134,7 @@ public class QbUsersDbManager {
     }
 
     public ArrayList<QBUser> getUsersByIds(List<Integer> usersIds) {
-        ArrayList<QBUser> qbUsers = new ArrayList<>();
+        ArrayList<QBUser> qbUsers = new ArrayList<QBUser>();
 
         for (Integer userId : usersIds) {
             if (getUserById(userId) != null) {

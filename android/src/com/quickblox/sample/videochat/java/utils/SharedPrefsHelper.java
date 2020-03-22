@@ -100,7 +100,7 @@ public class SharedPrefsHelper {
             StringifyArrayList<String> tags = null;
 
             if (tagsInString != null) {
-                tags = new StringifyArrayList<>();
+                tags = new StringifyArrayList<String>();
                 tags.add(tagsInString.split(","));
             }
 

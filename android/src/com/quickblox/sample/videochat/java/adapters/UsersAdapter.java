@@ -29,7 +29,7 @@ public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.ViewHolder> 
     public UsersAdapter(Context context, List<QBUser> usersList) {
         this.context = context;
         this.usersList = usersList;
-        this.selectedUsers = new ArrayList<>();
+        this.selectedUsers = new ArrayList<QBUser>();
     }
 
 

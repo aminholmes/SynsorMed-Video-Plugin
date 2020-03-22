@@ -21,7 +21,7 @@ public class UiUtils {
 
     private static final int COLOR_MAX_VALUE = 255;
     private static final float COLOR_ALPHA = 0.8f;
-    private static Map<Integer, Integer> colorsMap = new HashMap<>();
+    private static Map<Integer, Integer> colorsMap = new HashMap<Integer, Integer>();
 
     private static final Random random = new Random();
     private static int previousColor;

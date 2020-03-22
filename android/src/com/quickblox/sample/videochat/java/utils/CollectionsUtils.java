@@ -10,7 +10,7 @@ import java.util.Collection;
 public class CollectionsUtils {
 
     public static String makeStringFromUsersFullNames(ArrayList<QBUser> allUsers) {
-        StringifyArrayList<String> usersNames = new StringifyArrayList<>();
+        StringifyArrayList<String> usersNames = new StringifyArrayList<String>();
 
         for (QBUser usr : allUsers) {
             if (usr.getFullName() != null) {
@@ -23,7 +23,7 @@ public class CollectionsUtils {
     }
 
     public static ArrayList<Integer> getIdsSelectedOpponents(Collection<QBUser> selectedUsers) {
-        ArrayList<Integer> opponentsIds = new ArrayList<>();
+        ArrayList<Integer> opponentsIds = new ArrayList<Integer>();
         if (!selectedUsers.isEmpty()) {
             for (QBUser qbUser : selectedUsers) {
                 opponentsIds.add(qbUser.getId());

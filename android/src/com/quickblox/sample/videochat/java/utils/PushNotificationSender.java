@@ -34,7 +34,7 @@ public class PushNotificationSender {
         }
         qbEvent.setMessage(json.toString());
 
-        StringifyArrayList<Integer> userIds = new StringifyArrayList<>(recipients);
+        StringifyArrayList<Integer> userIds = new StringifyArrayList<Integer>(recipients);
         qbEvent.setUserIds(userIds);
 
         QBPushNotifications.createEvent(qbEvent).performAsync(null);

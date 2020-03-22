@@ -81,7 +81,7 @@ public class CallService extends Service {
     private static final String CHANNEL_ID = "Quickblox channel";
     private static final String CHANNEL_NAME = "Quickblox background service";
 
-    private HashMap<Integer, QBRTCVideoTrack> videoTrackMap = new HashMap<>();
+    private HashMap<Integer, QBRTCVideoTrack> videoTrackMap = new HashMap<Integer, QBRTCVideoTrack>();
     private CallServiceBinder callServiceBinder = new CallServiceBinder();
     private NetworkConnectionListener networkConnectionListener;
     private NetworkConnectionChecker networkConnectionChecker;
@@ -630,7 +630,7 @@ public class CallService extends Service {
         public void reconnectingIn(int seconds) {
             Log.i(TAG, "reconnectingIn " + seconds);
             if (!isCallState && expirationReconnectionTime < System.currentTimeMillis()) {
-                hangUpCurrentSession(new HashMap<>());
+                hangUpCurrentSession(new HashMap<String,String>());
             }
         }
     }
@@ -654,7 +654,7 @@ public class CallService extends Service {
             if (session == WebRtcSessionManager.getInstance(getApplicationContext()).getCurrentSession()) {
                 Log.d(TAG, "Initiator HangUp the Call");
                 if (userID.equals(session.getCallerID()) && currentSession != null) {
-                    currentSession.hangUp(new HashMap<>());
+                    currentSession.hangUp(new HashMap<String,String>());
                 }
 
                 QBUser participant = QbUsersDbManager.getInstance(getApplicationContext()).getUserById(userID);
@@ -770,7 +770,7 @@ public class CallService extends Service {
         @Override
         public void onCameraFreezed(String s) {
             ToastUtils.shortToast("Camera Freezed");
-            hangUpCurrentSession(new HashMap<>());
+            hangUpCurrentSession(new HashMap<String,String>());
         }
 
         @Override

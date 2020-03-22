@@ -81,7 +81,7 @@ public class CallActivity extends BaseActivity implements IncomeCallFragmentCall
     public static final String INCOME_CALL_FRAGMENT = "income_call_fragment";
     public static final int REQUEST_PERMISSION_SETTING = 545;
 
-    private ArrayList<CurrentCallStateCallback> currentCallStateCallbackList = new ArrayList<>();
+    private ArrayList<CurrentCallStateCallback> currentCallStateCallbackList = new ArrayList<CurrentCallStateCallback>();
     private QbUsersDbManager dbManager = QbUsersDbManager.getInstance(this);
     private Handler showIncomingCallWindowTaskHandler;
     private ConnectionListenerImpl connectionListener;
@@ -254,7 +254,7 @@ public class CallActivity extends BaseActivity implements IncomeCallFragmentCall
 
     private void startLoadAbsentUsers() {
         ArrayList<QBUser> usersFromDb = dbManager.getAllUsers();
-        ArrayList<Integer> allParticipantsOfCall = new ArrayList<>();
+        ArrayList<Integer> allParticipantsOfCall = new ArrayList<Integer>();
 
         if (opponentsIdsList != null) {
             allParticipantsOfCall.addAll(opponentsIdsList);
@@ -312,7 +312,7 @@ public class CallActivity extends BaseActivity implements IncomeCallFragmentCall
 
     public void hangUpCurrentSession() {
         callService.stopRingtone();
-        if (!callService.hangUpCurrentSession(new HashMap<>())) {
+        if (!callService.hangUpCurrentSession(new HashMap<String, String>())) {
             CallService.stop(this);
             finish();
         }
@@ -506,7 +506,7 @@ public class CallActivity extends BaseActivity implements IncomeCallFragmentCall
 
     @Override
     public void onRejectCurrentSession() {
-        callService.rejectCurrentSession(new HashMap<>());
+        callService.rejectCurrentSession(new HashMap<String, String>());
     }
 
     ////////////////////////////// ConversationFragmentCallback ////////////////////////////

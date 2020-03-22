@@ -110,7 +110,7 @@ public class OpponentsActivity extends BaseActivity {
 
     private void loadUsers() {
         showProgressDialog(R.string.dlg_loading_opponents);
-        ArrayList<GenericQueryRule> rules = new ArrayList<>();
+        ArrayList<GenericQueryRule> rules = new ArrayList<GenericQueryRule>();
         rules.add(new GenericQueryRule(ORDER_RULE, ORDER_DESC_UPDATED));
 
         QBPagedRequestBuilder qbPagedRequestBuilder = new QBPagedRequestBuilder();

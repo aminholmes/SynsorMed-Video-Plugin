@@ -7,7 +7,7 @@ import com.quickblox.videochat.webrtc.QBRTCTypes;
 
 public class QBRTCSessionUtils {
 
-    private static final SparseArray<Integer> peerStateDescriptions = new SparseArray<>();
+    private static final SparseArray<Integer> peerStateDescriptions = new SparseArray<Integer>();
 
     static {
         peerStateDescriptions.put(

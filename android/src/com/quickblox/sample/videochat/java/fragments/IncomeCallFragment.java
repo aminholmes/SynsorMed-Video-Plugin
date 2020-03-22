@@ -224,7 +224,7 @@ public class IncomeCallFragment extends Fragment implements Serializable, View.O
 
     private String getOtherIncUsersNames() {
         ArrayList<QBUser> usersFromDb = qbUserDbManager.getUsersByIds(opponentsIds);
-        ArrayList<QBUser> opponents = new ArrayList<>();
+        ArrayList<QBUser> opponents = new ArrayList<QBUser>();
         opponents.addAll(UsersUtils.getListAllUsersFromIds(usersFromDb, opponentsIds));
 
         opponents.remove(QBChatService.getInstance().getUser());
