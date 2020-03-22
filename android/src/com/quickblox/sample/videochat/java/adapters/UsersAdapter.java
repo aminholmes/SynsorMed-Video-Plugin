@@ -52,7 +52,7 @@ public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.ViewHolder> 
 
     @Override
     public void onBindViewHolder(@NonNull UsersAdapter.ViewHolder holder, int position) {
-        QBUser user = usersList.get(position);
+        final QBUser user = usersList.get(position);
         holder.opponentName.setText(user.getFullName());
         if (selectedUsers.contains(user)) {
             holder.rootLayout.setBackgroundResource(R.color.background_color_selected_user_item);
