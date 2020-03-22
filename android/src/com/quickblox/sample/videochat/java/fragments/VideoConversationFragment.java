@@ -131,7 +131,7 @@ public class VideoConversationFragment extends BaseConversationFragment implemen
         super.initFields();
         localViewOnClickListener = new LocalViewOnClickListener();
         amountOpponents = opponents.size();
-        allOpponents = Collections.synchronizedList(new ArrayList<Integer>(opponents.size()));
+        allOpponents = Collections.synchronizedList(new ArrayList<QBUser>(opponents.size()));
         allOpponents.addAll(opponents);
 
         timerCallText = getActivity().findViewById(R.id.timer_call);
@@ -199,7 +199,7 @@ public class VideoConversationFragment extends BaseConversationFragment implemen
         if (view == null) {
             return;
         }
-        opponentViewHolders = new SparseArray<Integer>(opponents.size());
+        opponentViewHolders = new SparseArray<ViewHolder>(opponents.size());
         isRemoteShown = false;
 
         localVideoView = (QBRTCSurfaceView) view.findViewById(R.id.local_video_view);
